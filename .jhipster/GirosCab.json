@@ -1,0 +1,34 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "data",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Data",
+            "fieldNameUnderscored": "data",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "observacoes",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Observacoes",
+            "fieldNameUnderscored": "observacoes",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150502113234",
+    "pagination": "infinite-scroll",
+    "validation": true
+}

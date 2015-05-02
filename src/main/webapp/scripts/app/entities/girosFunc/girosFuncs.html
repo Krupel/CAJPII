@@ -1,0 +1,112 @@
+<div>
+
+    <h2 translate="girosApp.girosFunc.home.title">GirosFunc</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveGirosFuncModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.girosFunc.home.createLabel">Create a new GirosFunc</span>
+    </button>
+    <div class="modal fade" id="saveGirosFuncModal" tabindex="-1" role="dialog" aria-labelledby="myGirosFuncLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myGirosFuncLabel" translate="girosApp.girosFunc.home.createOrEditLabel">Create or edit a GirosFunc</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="girosFunc.id" readonly>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label translate="girosApp.girosFunc.GirosCab">GirosCab</label>
+                            <select class="form-control" name="GirosCab" ng-model="girosFunc.girosCab.id" ng-options="girosCab.id as girosCab.id for girosCab in giroscabs">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.girosFunc.Funcionario">Funcionario</label>
+                            <select class="form-control" name="Funcionario" ng-model="girosFunc.funcionario.id" ng-options="funcionario.id as funcionario.id for funcionario in funcionarios">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteGirosFuncConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(girosFunc.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="girosApp.girosFunc.delete.question" translate-values="{id: '{{girosFunc.id}}'}">Are you sure you want to delete this GirosFunc?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="girosApp.girosFunc.GirosCab">GirosCab</th>
+                    <th translate="girosApp.girosFunc.Funcionario">Funcionario</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="girosFunc in girosFuncs">
+                    <td><a ui-sref="girosFuncDetail({id:girosFunc.id})">{{girosFunc.id}}</a></td>
+                    <td>{{girosFunc.GirosCab.id}}</td>
+                    <td>{{girosFunc.Funcionario.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="girosFuncDetail({id:girosFunc.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(girosFunc.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(girosFunc.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

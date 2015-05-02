@@ -8,5 +8,8 @@
     <include file="classpath:config/liquibase/changelog/20150502090328_added_entity_Tipologia.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502090422_added_entity_Funcionario.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502110832_added_entity_Amigos.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150502113234_added_entity_GirosCab.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150502113500_added_entity_GirosLin.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150502113639_added_entity_GirosFunc.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

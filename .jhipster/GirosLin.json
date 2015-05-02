@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "GirosCab",
+            "relationshipNameCapitalized": "GirosCab",
+            "relationshipFieldName": "girosCab",
+            "otherEntityName": "girosCab",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "GirosCab",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "Amigos",
+            "relationshipNameCapitalized": "Amigos",
+            "relationshipFieldName": "amigos",
+            "otherEntityName": "amigos",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Amigos",
+            "otherEntityField": "nome"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "observacoes",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Observacoes",
+            "fieldNameUnderscored": "observacoes",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150502113500",
+    "pagination": "infinite-scroll",
+    "validation": false
+}

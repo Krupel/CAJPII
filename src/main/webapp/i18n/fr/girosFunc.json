@@ -1,0 +1,20 @@
+{
+    "girosApp": {
+        "girosFunc" : {
+            "home": {
+                "title": "GirosFuncs",
+                "createLabel": "Créer un nouveau GirosFunc",
+                "createOrEditLabel": "Créer ou éditer un GirosFunc"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GirosFunc {{ id }} ?"
+            },
+            "detail": {
+                "title": "GirosFunc"
+            },
+            "GirosCab": "GirosCab",
+            "Funcionario": "Funcionario"
+        }
+    }
+}
+

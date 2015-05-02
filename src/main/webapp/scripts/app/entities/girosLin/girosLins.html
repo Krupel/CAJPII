@@ -1,0 +1,120 @@
+<div>
+
+    <h2 translate="girosApp.girosLin.home.title">GirosLin</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveGirosLinModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.girosLin.home.createLabel">Create a new GirosLin</span>
+    </button>
+    <div class="modal fade" id="saveGirosLinModal" tabindex="-1" role="dialog" aria-labelledby="myGirosLinLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myGirosLinLabel" translate="girosApp.girosLin.home.createOrEditLabel">Create or edit a GirosLin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="girosLin.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="girosApp.girosLin.observacoes">Observacoes</label>
+                            <input type="text" class="form-control" name="observacoes"
+                                   ng-model="girosLin.observacoes">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="girosApp.girosLin.GirosCab">GirosCab</label>
+                            <select class="form-control" name="GirosCab" ng-model="girosLin.girosCab.id" ng-options="girosCab.id as girosCab.id for girosCab in giroscabs">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.girosLin.Amigos">Amigos</label>
+                            <select class="form-control" name="Amigos" ng-model="girosLin.amigos.id" ng-options="amigos.id as amigos.nome for amigos in amigoss">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteGirosLinConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(girosLin.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="girosApp.girosLin.delete.question" translate-values="{id: '{{girosLin.id}}'}">Are you sure you want to delete this GirosLin?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="girosApp.girosLin.observacoes">Observacoes</th>
+                    <th translate="girosApp.girosLin.GirosCab">GirosCab</th>
+                    <th translate="girosApp.girosLin.Amigos">Amigos</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="girosLin in girosLins">
+                    <td><a ui-sref="girosLinDetail({id:girosLin.id})">{{girosLin.id}}</a></td>
+                    <td>{{girosLin.observacoes}}</td>
+                    <td>{{girosLin.GirosCab.id}}</td>
+                    <td>{{girosLin.Amigos.nome}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="girosLinDetail({id:girosLin.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(girosLin.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(girosLin.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

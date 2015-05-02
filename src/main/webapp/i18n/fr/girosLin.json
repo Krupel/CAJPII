@@ -1,0 +1,21 @@
+{
+    "girosApp": {
+        "girosLin" : {
+            "home": {
+                "title": "GirosLins",
+                "createLabel": "Créer un nouveau GirosLin",
+                "createOrEditLabel": "Créer ou éditer un GirosLin"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GirosLin {{ id }} ?"
+            },
+            "detail": {
+                "title": "GirosLin"
+            },
+            "observacoes": "Observacoes",
+            "GirosCab": "GirosCab",
+            "Amigos": "Amigos"
+        }
+    }
+}
+

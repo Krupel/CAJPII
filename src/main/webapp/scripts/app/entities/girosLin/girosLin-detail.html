@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="girosApp.girosLin.detail.title">GirosLin</span> {{girosLin.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="girosApp.girosLin.observacoes">Observacoes</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{girosLin.observacoes}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.girosLin.GirosCab">GirosCab</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{girosLin.GirosCab.id}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.girosLin.Amigos">Amigos</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{girosLin.Amigos.nome}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="girosLin"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

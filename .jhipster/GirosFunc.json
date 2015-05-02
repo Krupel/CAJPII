@@ -1,0 +1,35 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "GirosCab",
+            "relationshipNameCapitalized": "GirosCab",
+            "relationshipFieldName": "girosCab",
+            "otherEntityName": "girosCab",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "GirosCab",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "Funcionario",
+            "relationshipNameCapitalized": "Funcionario",
+            "relationshipFieldName": "funcionario",
+            "otherEntityName": "funcionario",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Funcionario",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150502113639",
+    "pagination": "infinite-scroll",
+    "validation": false
+}
