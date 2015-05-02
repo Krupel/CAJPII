@@ -1,0 +1,28 @@
+{
+    "girosApp": {
+        "amigos" : {
+            "home": {
+                "title": "Amigoss",
+                "createLabel": "Créer un nouveau Amigos",
+                "createOrEditLabel": "Créer ou éditer un Amigos"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Amigos {{ id }} ?"
+            },
+            "detail": {
+                "title": "Amigos"
+            },
+            "nome": "Nome",
+            "dataNascimento": "DataNascimento",
+            "bi": "Bi",
+            "niss": "Niss",
+            "nacionalidade": "Nacionalidade",
+            "autorizacaoResidencia": "AutorizacaoResidencia",
+            "dataRegisto": "DataRegisto",
+            "caracteristicas": "Caracteristicas",
+            "observacoes": "Observacoes",
+            "Tipologia": "Tipologia"
+        }
+    }
+}
+

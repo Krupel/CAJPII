@@ -1,0 +1,102 @@
+
+<div>
+    <h2><span translate="girosApp.amigos.detail.title">Amigos</span> {{amigos.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.nome">Nome</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.nome}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.dataNascimento">DataNascimento</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.dataNascimento}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.bi">Bi</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.bi}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.niss">Niss</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.niss}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.nacionalidade">Nacionalidade</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.nacionalidade}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.autorizacaoResidencia">AutorizacaoResidencia</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.autorizacaoResidencia}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.dataRegisto">DataRegisto</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.dataRegisto}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.caracteristicas">Caracteristicas</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.caracteristicas}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.observacoes">Observacoes</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.observacoes}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.amigos.Tipologia">Tipologia</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{amigos.Tipologia.descricao}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="amigos"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

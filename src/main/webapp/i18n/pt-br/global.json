@@ -1,3 +1,4 @@
+
 {
     "global": {
         "title": "Giros",
@@ -8,6 +9,7 @@
                 "main": "Entidades",
                 "tipologia": "Tipologia",
                 "funcionario": "Funcionario",
+                "amigos": "Amigos",
                 "additionalEntity": "CAJP will add addtional entities"
             },
             "account": {

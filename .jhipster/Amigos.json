@@ -1,0 +1,98 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Tipologia",
+            "relationshipNameCapitalized": "Tipologia",
+            "relationshipFieldName": "tipologia",
+            "otherEntityName": "tipologia",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Tipologia",
+            "otherEntityField": "descricao"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nome",
+            "fieldNameUnderscored": "nome",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "dataNascimento",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "DataNascimento",
+            "fieldNameUnderscored": "data_nascimento",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "bi",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Bi",
+            "fieldNameUnderscored": "bi",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "niss",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Niss",
+            "fieldNameUnderscored": "niss",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "nacionalidade",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nacionalidade",
+            "fieldNameUnderscored": "nacionalidade",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "autorizacaoResidencia",
+            "fieldType": "String",
+            "fieldNameCapitalized": "AutorizacaoResidencia",
+            "fieldNameUnderscored": "autorizacao_residencia",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "dataRegisto",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "DataRegisto",
+            "fieldNameUnderscored": "data_registo",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "caracteristicas",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Caracteristicas",
+            "fieldNameUnderscored": "caracteristicas",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "observacoes",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Observacoes",
+            "fieldNameUnderscored": "observacoes",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150502110832",
+    "pagination": "infinite-scroll",
+    "validation": false
+}

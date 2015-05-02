@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Amigos.
+    -->
+    <changeSet id="20150502110832" author="jhipster">
+        <createTable tableName="T_AMIGOS">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome" type="varchar(255)"/>
+            <column name="data_nascimento" type="date"/>
+            <column name="bi" type="varchar(255)"/>
+            <column name="niss" type="varchar(255)"/>
+            <column name="nacionalidade" type="varchar(255)"/>
+            <column name="autorizacao_residencia" type="varchar(255)"/>
+            <column name="data_registo" type="date"/>
+            <column name="caracteristicas" type="varchar(255)"/>
+            <column name="observacoes" type="varchar(255)"/>
+            <column name="tipologia_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="tipologia_id"
+                                 baseTableName="T_AMIGOS"
+                                 constraintName="fk_amigos_tipologia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_TIPOLOGIA"/>
+
+    </changeSet>
+</databaseChangeLog>

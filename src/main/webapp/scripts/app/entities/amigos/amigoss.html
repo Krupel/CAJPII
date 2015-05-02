@@ -1,0 +1,177 @@
+<div>
+
+    <h2 translate="girosApp.amigos.home.title">Amigos</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveAmigosModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.amigos.home.createLabel">Create a new Amigos</span>
+    </button>
+    <div class="modal fade" id="saveAmigosModal" tabindex="-1" role="dialog" aria-labelledby="myAmigosLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myAmigosLabel" translate="girosApp.amigos.home.createOrEditLabel">Create or edit a Amigos</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="amigos.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.nome">Nome</label>
+                            <input type="text" class="form-control" name="nome"
+                                   ng-model="amigos.nome">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.dataNascimento">DataNascimento</label>
+                            <input type="date" class="form-control" name="dataNascimento"
+                                   ng-model="amigos.dataNascimento">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.bi">Bi</label>
+                            <input type="text" class="form-control" name="bi"
+                                   ng-model="amigos.bi">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.niss">Niss</label>
+                            <input type="text" class="form-control" name="niss"
+                                   ng-model="amigos.niss">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.nacionalidade">Nacionalidade</label>
+                            <input type="text" class="form-control" name="nacionalidade"
+                                   ng-model="amigos.nacionalidade">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.autorizacaoResidencia">AutorizacaoResidencia</label>
+                            <input type="text" class="form-control" name="autorizacaoResidencia"
+                                   ng-model="amigos.autorizacaoResidencia">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.dataRegisto">DataRegisto</label>
+                            <input type="date" class="form-control" name="dataRegisto"
+                                   ng-model="amigos.dataRegisto">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.caracteristicas">Caracteristicas</label>
+                            <input type="text" class="form-control" name="caracteristicas"
+                                   ng-model="amigos.caracteristicas">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.observacoes">Observacoes</label>
+                            <input type="text" class="form-control" name="observacoes"
+                                   ng-model="amigos.observacoes">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="girosApp.amigos.Tipologia">Tipologia</label>
+                            <select class="form-control" name="Tipologia" ng-model="amigos.tipologia.id" ng-options="tipologia.id as tipologia.descricao for tipologia in tipologias">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteAmigosConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(amigos.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="girosApp.amigos.delete.question" translate-values="{id: '{{amigos.id}}'}">Are you sure you want to delete this Amigos?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="girosApp.amigos.nome">Nome</th>
+                    <th translate="girosApp.amigos.dataNascimento">DataNascimento</th>
+                    <th translate="girosApp.amigos.bi">Bi</th>
+                    <th translate="girosApp.amigos.niss">Niss</th>
+                    <th translate="girosApp.amigos.nacionalidade">Nacionalidade</th>
+                    <th translate="girosApp.amigos.autorizacaoResidencia">AutorizacaoResidencia</th>
+                    <th translate="girosApp.amigos.dataRegisto">DataRegisto</th>
+                    <th translate="girosApp.amigos.caracteristicas">Caracteristicas</th>
+                    <th translate="girosApp.amigos.observacoes">Observacoes</th>
+                    <th translate="girosApp.amigos.Tipologia">Tipologia</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="amigos in amigoss">
+                    <td><a ui-sref="amigosDetail({id:amigos.id})">{{amigos.id}}</a></td>
+                    <td>{{amigos.nome}}</td>
+                    <td>{{amigos.dataNascimento}}</td>
+                    <td>{{amigos.bi}}</td>
+                    <td>{{amigos.niss}}</td>
+                    <td>{{amigos.nacionalidade}}</td>
+                    <td>{{amigos.autorizacaoResidencia}}</td>
+                    <td>{{amigos.dataRegisto}}</td>
+                    <td>{{amigos.caracteristicas}}</td>
+                    <td>{{amigos.observacoes}}</td>
+                    <td>{{amigos.Tipologia.descricao}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="amigosDetail({id:amigos.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(amigos.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(amigos.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

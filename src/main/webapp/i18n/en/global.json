@@ -8,6 +8,7 @@
                 "main": "Entities",
                 "tipologia": "Tipologia",
                 "funcionario": "Funcionario",
+                "amigos": "Amigos",
                 "additionalEntity": "CAJP will add addtional entities"
             },
             "account": {
