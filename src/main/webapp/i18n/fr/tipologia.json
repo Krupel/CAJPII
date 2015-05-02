@@ -1,0 +1,19 @@
+{
+    "girosApp": {
+        "tipologia" : {
+            "home": {
+                "title": "Tipologias",
+                "createLabel": "Créer un nouveau Tipologia",
+                "createOrEditLabel": "Créer ou éditer un Tipologia"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tipologia {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tipologia"
+            },
+            "descricao": "Descricao"
+        }
+    }
+}
+

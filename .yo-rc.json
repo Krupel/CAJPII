@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "Giros",
+    "packageName": "com.cajp.giros",
+    "packageFolder": "com/cajp/giros",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "gradle",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "rememberMeKey": "c65d34823cf1d28ce980be0ada2270aadfa1c841"
+  }
+}

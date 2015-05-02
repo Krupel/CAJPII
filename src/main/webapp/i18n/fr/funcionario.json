@@ -1,0 +1,19 @@
+{
+    "girosApp": {
+        "funcionario" : {
+            "home": {
+                "title": "Funcionarios",
+                "createLabel": "Créer un nouveau Funcionario",
+                "createOrEditLabel": "Créer ou éditer un Funcionario"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Funcionario {{ id }} ?"
+            },
+            "detail": {
+                "title": "Funcionario"
+            },
+            "nome": "Nome"
+        }
+    }
+}
+

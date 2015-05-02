@@ -1,0 +1,14 @@
+{
+    "main": {
+        "title": "Bem vindo, CAJP!",
+        "subtitle": "Mão amiga",
+        "logged": {
+            "message": "Você está logado como \"{{username}}\"."
+        },
+        "question": "Em caso de dúvida:",
+        "link": {
+            "homepage": "CAJP homepage",
+            "contact": " + 351 239 718 001"
+        }
+    }
+}
