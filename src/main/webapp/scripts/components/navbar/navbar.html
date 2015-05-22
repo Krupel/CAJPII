@@ -21,6 +21,38 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                 <span>
                                     <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet" translate="global.menu.estatisticas.main">
+                                        estatisticas
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="resumomensal"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.estatisticas.resumomensal">resumo mensal</span></a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet" translate="global.menu.pesquisa.main">
+                                        pesquisas
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="amigospesq"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.pesquisa.amigospesq">amigos</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="girospesq"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.entities.funcionario">funcionario</span></a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
                                     <span class="hidden-tablet" translate="global.menu.entities.main">
                                         Entities
                                     </span>

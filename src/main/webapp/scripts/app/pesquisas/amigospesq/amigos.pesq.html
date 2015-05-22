@@ -1,0 +1,64 @@
+<div ng-cloak>
+    amigos pesquisa em desenvolvimento
+
+    <select>
+        <option ng-value="pais.name" ng-repeat="pais in paises.paises">{{pais.name}}</option>
+
+    </select>
+
+    <div class="table-responsive">
+        <div class="'export-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th translate="girosApp.amigos.nome">Nome</th>
+                <th translate="girosApp.amigos.dataNascimento">DataNascimento</th>
+                <th translate="girosApp.amigos.bi">Bi</th>
+                <th translate="girosApp.amigos.niss">Niss</th>
+                <th translate="girosApp.amigos.nacionalidade">Nacionalidade</th>
+                <th translate="girosApp.amigos.autorizacaoResidencia">AutorizacaoResidencia</th>
+                <th translate="girosApp.amigos.dataRegisto">DataRegisto</th>
+                <th translate="girosApp.amigos.caracteristicas">Caracteristicas</th>
+                <th translate="girosApp.amigos.observacoes">Observacoes</th>
+                <th translate="girosApp.amigos.Tipologia">Tipologia</th>
+                <th translate="girosApp.amigos.Tipologia" ng-hide="hideCol1">Tipologia2</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+            <tr ng-repeat="amigos in amigoss">
+                <td><a ui-sref="amigosDetail({id:amigos.id})">{{amigos.id}}</a></td>
+                <td>{{amigos.nome}}</td>
+                <td>{{amigos.dataNascimento}}</td>
+                <td>{{amigos.bi}}</td>
+                <td>{{amigos.niss}}</td>
+                <td>{{amigos.nacionalidade}}</td>
+                <td>{{amigos.autorizacaoResidencia}}</td>
+                <td>{{amigos.dataRegisto}}</td>
+                <td>{{amigos.caracteristicas}}</td>
+                <td>{{amigos.observacoes}}</td>
+                <td>{{amigos.Tipologia.descricao}}</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="amigosDetail({id:amigos.id})"
+                            class="btn btn-info">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="update(amigos.id)"
+                            class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="delete(amigos.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

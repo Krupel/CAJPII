@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.cajp.giros.domain.Amigos;
 import com.cajp.giros.repository.AmigosRepository;
 import com.cajp.giros.web.rest.util.PaginationUtil;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -76,6 +77,20 @@ public class AmigosResource {
         Page<Amigos> page = amigosRepository.findAll(PaginationUtil.generatePageRequest(offset, limit));
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/amigoss", offset, limit);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    /**
+     * GET  /amigoss -> get all the amigoss.
+     */
+    @RequestMapping(value = "/amigossDate",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Amigos>> getAmigoByDate(@RequestParam(value = "date" , required = false) DateTime date,
+                                               @RequestParam(value = "toDate", required = false) DateTime toDate)
+        throws URISyntaxException {
+        log.debug("REST request to getAmigoByDate {}", toDate);
+        return null;
     }
 
     /**

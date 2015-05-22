@@ -5,6 +5,12 @@
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveTipologiaModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.tipologia.home.createLabel">Create a new Tipologia</span>
     </button>
+    <div>
+        <input type="checkbox" ng-model="colIDVisible"> ID
+        <input type="checkbox" ng-model="colDescricaoVisible"> <h5 translate="girosApp.tipologia.descricao"> Desc</h5>
+
+    </div>
+
     <div class="modal fade" id="saveTipologiaModal" tabindex="-1" role="dialog" aria-labelledby="myTipologiaLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -79,15 +85,15 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th translate="girosApp.tipologia.descricao">Descricao</th>
+                    <th ng-show="colIDVisible">ID</th>
+                    <th translate="girosApp.tipologia.descricao" ng-show="colDescricaoVisible">Descricao</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="tipologia in tipologias">
-                    <td><a ui-sref="tipologiaDetail({id:tipologia.id})">{{tipologia.id}}</a></td>
-                    <td>{{tipologia.descricao}}</td>
+                    <td ng-show="colIDVisible"><a ui-sref="tipologiaDetail({id:tipologia.id})">{{tipologia.id}}</a></td>
+                    <td ng-show="colDescricaoVisible">{{tipologia.descricao}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="tipologiaDetail({id:tipologia.id})"

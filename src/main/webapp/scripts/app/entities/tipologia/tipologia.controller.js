@@ -4,6 +4,10 @@ angular.module('girosApp')
     .controller('TipologiaController', function ($scope, Tipologia, ParseLinks) {
         $scope.tipologias = [];
         $scope.page = 1;
+        $scope.colIDVisible = true;
+        $scope.colDescricaoVisible = true;
+
+
         $scope.loadAll = function() {
             Tipologia.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));

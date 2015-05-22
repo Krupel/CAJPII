@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('girosApp')
-    .controller('AmigosController', function ($scope, Amigos, Tipologia, ParseLinks) {
+    .controller('AmigosController', function ($scope, Amigos, Tipologia, ParseLinks,elm) {
         $scope.amigoss = [];
         $scope.tipologias = Tipologia.query();
         $scope.page = 1;
+        $scope.deData = 1;
+        $scope.ateData = 1;
+
+
         $scope.loadAll = function() {
             Amigos.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
@@ -13,6 +17,16 @@ angular.module('girosApp')
                 }
             });
         };
+
+
+        $scope.loadbyDate = function(){
+            Amigos.query({date: $scope.deData, toDate:$scope.ateData}, function() {
+                alert("yo "+$scope.deData);
+            });
+        };
+
+        $scope.loadbyDate();
+
         $scope.reset = function() {
             $scope.page = 1;
             $scope.amigoss = [];

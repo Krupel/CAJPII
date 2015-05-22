@@ -36,6 +36,15 @@
                 "apidocs": "API",
                 "database": "Database"
             },
+            "pesquisa":{
+                "main":"Pesquisas",
+                "amigospesq":"amigos",
+                "girospesq":"Giros"
+            },
+            "estatisticas":{
+                "main":"Estatísticas",
+                "resumomensal":"Resumo mensal"
+            },
             "language": "Idioma"
         },
         "form": {

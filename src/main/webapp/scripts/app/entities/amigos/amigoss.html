@@ -1,10 +1,12 @@
 <div>
-
     <h2 translate="girosApp.amigos.home.title">Amigos</h2>
 
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveAmigosModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.amigos.home.createLabel">Create a new Amigos</span>
     </button>
+    <div>
+        <md-button class="md-primary" ng-click="btexport()">teste</md-button>
+    </div>
     <div class="modal fade" id="saveAmigosModal" tabindex="-1" role="dialog" aria-labelledby="myAmigosLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -123,6 +125,7 @@
     </div>
 
     <div class="table-responsive">
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -137,6 +140,7 @@
                     <th translate="girosApp.amigos.caracteristicas">Caracteristicas</th>
                     <th translate="girosApp.amigos.observacoes">Observacoes</th>
                     <th translate="girosApp.amigos.Tipologia">Tipologia</th>
+                    <th translate="girosApp.amigos.Tipologia" ng-hide="hideCol1">Tipologia2</th>
                     <th></th>
                 </tr>
             </thead>
