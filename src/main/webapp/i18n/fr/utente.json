@@ -1,0 +1,29 @@
+{
+    "girosApp": {
+        "utente" : {
+            "home": {
+                "title": "Utentes",
+                "createLabel": "Créer un nouveau Utente",
+                "createOrEditLabel": "Créer ou éditer un Utente"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Utente {{ id }} ?"
+            },
+            "detail": {
+                "title": "Utente"
+            },
+            "nome": "Nome",
+            "datanascimento": "Datanascimento",
+            "bi": "Bi",
+            "validadebi": "Validadebi",
+            "sexo": "Sexo",
+            "niss": "Niss",
+            "nacionalidade": "Nacionalidade",
+            "dataregisto": "Dataregisto",
+            "caracteristicas": "Caracteristicas",
+            "activo": "Activo",
+            "tipologiaAmigos": "tipologiaAmigos"
+        }
+    }
+}
+

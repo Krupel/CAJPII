@@ -1,5 +1,3 @@
-
-
 {
     "global": {
         "title": "Giros",
@@ -14,7 +12,9 @@
                 "girosFunc": "GirosFunc",
                 "girosLin": "GirosLin",
                 "girosCab": "GirosCab",
-                "additionalEntity": "CAJP will add addtional entities"
+                "additionalEntity": "CAJP will add addtional entities",
+                "utente": "Utente",
+                "historicoUtente": "HistoricoUtente"
             },
             "account": {
                 "main": "Conta",

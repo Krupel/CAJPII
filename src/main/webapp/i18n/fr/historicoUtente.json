@@ -1,0 +1,21 @@
+{
+    "girosApp": {
+        "historicoUtente" : {
+            "home": {
+                "title": "HistoricoUtentes",
+                "createLabel": "Créer un nouveau HistoricoUtente",
+                "createOrEditLabel": "Créer ou éditer un HistoricoUtente"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le HistoricoUtente {{ id }} ?"
+            },
+            "detail": {
+                "title": "HistoricoUtente"
+            },
+            "data": "Data",
+            "Utente": "Utente",
+            "Tipologia": "Tipologia"
+        }
+    }
+}
+

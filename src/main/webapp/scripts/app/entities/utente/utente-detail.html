@@ -1,0 +1,110 @@
+
+<div>
+    <h2><span translate="girosApp.utente.detail.title">Utente</span> {{utente.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.nome">Nome</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.nome}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.datanascimento">Datanascimento</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.datanascimento}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.bi">Bi</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.bi}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.validadebi">Validadebi</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.validadebi}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.sexo">Sexo</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.sexo}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.niss">Niss</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.niss}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.nacionalidade">Nacionalidade</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.nacionalidade}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.dataregisto">Dataregisto</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.dataregisto}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.caracteristicas">Caracteristicas</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.caracteristicas}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.activo">Activo</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.activo}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.utente.tipologiaAmigos">tipologiaAmigos</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{utente.tipologiaAmigos.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="utente"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

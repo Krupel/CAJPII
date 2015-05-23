@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Utente",
+            "relationshipNameCapitalized": "Utente",
+            "relationshipFieldName": "utente",
+            "otherEntityName": "utente",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Utente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "Tipologia",
+            "relationshipNameCapitalized": "Tipologia",
+            "relationshipFieldName": "tipologia",
+            "otherEntityName": "tipologia",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Tipologia",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "data",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Data",
+            "fieldNameUnderscored": "data",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150523004640",
+    "pagination": "infinite-scroll",
+    "validation": false
+}
