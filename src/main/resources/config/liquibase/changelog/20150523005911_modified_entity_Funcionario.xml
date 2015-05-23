@@ -10,15 +10,16 @@
     <!--
         Added the entity Funcionario.
     -->
-    <changeSet id="20150502090422" author="jhipster">
+    <changeSet id="20150523005911" author="jhipster">
         <createTable tableName="T_FUNCIONARIO">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="nome" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
+            <column name="bi" type="varchar(255)"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="telefone" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
         </createTable>
-        
+
     </changeSet>
 </databaseChangeLog>

@@ -1,0 +1,130 @@
+<div>
+
+    <h2 translate="girosApp.tecnico.home.title">Tecnico</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveTecnicoModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.tecnico.home.createLabel">Create a new Tecnico</span>
+    </button>
+    <div class="modal fade" id="saveTecnicoModal" tabindex="-1" role="dialog" aria-labelledby="myTecnicoLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myTecnicoLabel" translate="girosApp.tecnico.home.createOrEditLabel">Create or edit a Tecnico</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="tecnico.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="girosApp.tecnico.nome">Nome</label>
+                            <input type="text" class="form-control" name="nome"
+                                   ng-model="tecnico.nome">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.tecnico.bi">Bi</label>
+                            <input type="text" class="form-control" name="bi"
+                                   ng-model="tecnico.bi">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.tecnico.telefone">Telefone</label>
+                            <input type="text" class="form-control" name="telefone"
+                                   ng-model="tecnico.telefone">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="girosApp.tecnico.email">Email</label>
+                            <input type="text" class="form-control" name="email"
+                                   ng-model="tecnico.email">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteTecnicoConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(tecnico.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="girosApp.tecnico.delete.question" translate-values="{id: '{{tecnico.id}}'}">Are you sure you want to delete this Tecnico?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="girosApp.tecnico.nome">Nome</th>
+                    <th translate="girosApp.tecnico.bi">Bi</th>
+                    <th translate="girosApp.tecnico.telefone">Telefone</th>
+                    <th translate="girosApp.tecnico.email">Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="tecnico in tecnicos">
+                    <td><a ui-sref="tecnicoDetail({id:tecnico.id})">{{tecnico.id}}</a></td>
+                    <td>{{tecnico.nome}}</td>
+                    <td>{{tecnico.bi}}</td>
+                    <td>{{tecnico.telefone}}</td>
+                    <td>{{tecnico.email}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="tecnicoDetail({id:tecnico.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(tecnico.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(tecnico.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

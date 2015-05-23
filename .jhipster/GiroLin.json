@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Utente",
+            "relationshipNameCapitalized": "Utente",
+            "relationshipFieldName": "utente",
+            "otherEntityName": "utente",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Utente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "GiroCab",
+            "relationshipNameCapitalized": "GiroCab",
+            "relationshipFieldName": "giroCab",
+            "otherEntityName": "giroCab",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "GiroCab",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "observacoes",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Observacoes",
+            "fieldNameUnderscored": "observacoes",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150523013958",
+    "pagination": "infinite-scroll",
+    "validation": false
+}

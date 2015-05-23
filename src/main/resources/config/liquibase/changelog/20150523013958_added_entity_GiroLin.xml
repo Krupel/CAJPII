@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity GiroLin.
+    -->
+    <changeSet id="20150523013958" author="jhipster">
+        <createTable tableName="T_GIROLIN">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="observacoes" type="varchar(255)"/>
+            <column name="utente_id" type="bigint"/>
+            <column name="girocab_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="utente_id"
+                                 baseTableName="T_GIROLIN"
+                                 constraintName="fk_girolin_utente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_UTENTE"/>
+
+        <addForeignKeyConstraint baseColumnNames="girocab_id"
+                                 baseTableName="T_GIROLIN"
+                                 constraintName="fk_girolin_girocab_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_GIROCAB"/>
+
+    </changeSet>
+</databaseChangeLog>

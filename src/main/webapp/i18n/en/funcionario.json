@@ -12,7 +12,10 @@
             "detail": {
                 "title": "Funcionario"
             },
-            "nome": "Nome"
+            "bi": "Bi",
+            "nome": "Nome",
+            "telefone": "Telefone",
+            "email": "Email"
         }
     }
 }

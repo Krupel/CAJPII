@@ -1,0 +1,22 @@
+{
+    "girosApp": {
+        "tecnico" : {
+            "home": {
+                "title": "Tecnicos",
+                "createLabel": "Créer un nouveau Tecnico",
+                "createOrEditLabel": "Créer ou éditer un Tecnico"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tecnico {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tecnico"
+            },
+            "nome": "Nome",
+            "bi": "Bi",
+            "telefone": "Telefone",
+            "email": "Email"
+        }
+    }
+}
+

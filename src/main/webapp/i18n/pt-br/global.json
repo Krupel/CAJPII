@@ -15,6 +15,10 @@
                 "additionalEntity": "CAJP will add addtional entities",
                 "utente": "Utente",
                 "historicoUtente": "HistoricoUtente"
+                "giroFunc": "GiroFunc",
+                "giroLin": "GiroLin",
+                "giroCab": "GiroCab",
+                "tecnico": "Tecnico"
             },
             "account": {
                 "main": "Conta",

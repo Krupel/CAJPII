@@ -37,8 +37,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest
 public class FuncionarioResourceTest {
 
+    private static final String DEFAULT_BI = "SAMPLE_TEXT";
+    private static final String UPDATED_BI = "UPDATED_TEXT";
     private static final String DEFAULT_NOME = "SAMPLE_TEXT";
     private static final String UPDATED_NOME = "UPDATED_TEXT";
+    private static final String DEFAULT_TELEFONE = "SAMPLE_TEXT";
+    private static final String UPDATED_TELEFONE = "UPDATED_TEXT";
+    private static final String DEFAULT_EMAIL = "SAMPLE_TEXT";
+    private static final String UPDATED_EMAIL = "UPDATED_TEXT";
 
     @Inject
     private FuncionarioRepository funcionarioRepository;
@@ -58,7 +64,10 @@ public class FuncionarioResourceTest {
     @Before
     public void initTest() {
         funcionario = new Funcionario();
+        funcionario.setBi(DEFAULT_BI);
         funcionario.setNome(DEFAULT_NOME);
+        funcionario.setTelefone(DEFAULT_TELEFONE);
+        funcionario.setEmail(DEFAULT_EMAIL);
     }
 
     @Test
@@ -77,7 +86,10 @@ public class FuncionarioResourceTest {
         List<Funcionario> funcionarios = funcionarioRepository.findAll();
         assertThat(funcionarios).hasSize(1);
         Funcionario testFuncionario = funcionarios.iterator().next();
+        assertThat(testFuncionario.getBi()).isEqualTo(DEFAULT_BI);
         assertThat(testFuncionario.getNome()).isEqualTo(DEFAULT_NOME);
+        assertThat(testFuncionario.getTelefone()).isEqualTo(DEFAULT_TELEFONE);
+        assertThat(testFuncionario.getEmail()).isEqualTo(DEFAULT_EMAIL);
     }
 
     @Test
@@ -91,7 +103,10 @@ public class FuncionarioResourceTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[0].id").value(funcionario.getId().intValue()))
-                .andExpect(jsonPath("$.[0].nome").value(DEFAULT_NOME.toString()));
+                .andExpect(jsonPath("$.[0].bi").value(DEFAULT_BI.toString()))
+                .andExpect(jsonPath("$.[0].nome").value(DEFAULT_NOME.toString()))
+                .andExpect(jsonPath("$.[0].telefone").value(DEFAULT_TELEFONE.toString()))
+                .andExpect(jsonPath("$.[0].email").value(DEFAULT_EMAIL.toString()));
     }
 
     @Test
@@ -105,7 +120,10 @@ public class FuncionarioResourceTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(funcionario.getId().intValue()))
-            .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()));
+            .andExpect(jsonPath("$.bi").value(DEFAULT_BI.toString()))
+            .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()))
+            .andExpect(jsonPath("$.telefone").value(DEFAULT_TELEFONE.toString()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()));
     }
 
     @Test
@@ -123,7 +141,10 @@ public class FuncionarioResourceTest {
         funcionarioRepository.saveAndFlush(funcionario);
 
         // Update the funcionario
+        funcionario.setBi(UPDATED_BI);
         funcionario.setNome(UPDATED_NOME);
+        funcionario.setTelefone(UPDATED_TELEFONE);
+        funcionario.setEmail(UPDATED_EMAIL);
         restFuncionarioMockMvc.perform(put("/api/funcionarios")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(funcionario)))
@@ -133,7 +154,10 @@ public class FuncionarioResourceTest {
         List<Funcionario> funcionarios = funcionarioRepository.findAll();
         assertThat(funcionarios).hasSize(1);
         Funcionario testFuncionario = funcionarios.iterator().next();
+        assertThat(testFuncionario.getBi()).isEqualTo(UPDATED_BI);
         assertThat(testFuncionario.getNome()).isEqualTo(UPDATED_NOME);
+        assertThat(testFuncionario.getTelefone()).isEqualTo(UPDATED_TELEFONE);
+        assertThat(testFuncionario.getEmail()).isEqualTo(UPDATED_EMAIL);
     }
 
     @Test

@@ -1,0 +1,35 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Tecnico",
+            "relationshipNameCapitalized": "Tecnico",
+            "relationshipFieldName": "tecnico",
+            "otherEntityName": "tecnico",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Tecnico",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "GiroCab",
+            "relationshipNameCapitalized": "GiroCab",
+            "relationshipFieldName": "giroCab",
+            "otherEntityName": "giroCab",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "GiroCab",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150523014043",
+    "pagination": "infinite-scroll",
+    "validation": false
+}

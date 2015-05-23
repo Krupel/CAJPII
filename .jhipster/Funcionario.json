@@ -3,14 +3,35 @@
     "fields": [
         {
             "fieldId": 1,
+            "fieldName": "bi",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Bi",
+            "fieldNameUnderscored": "bi",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
             "fieldName": "nome",
             "fieldType": "String",
             "fieldNameCapitalized": "Nome",
             "fieldNameUnderscored": "nome",
-            "fieldValidate": true,
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "telefone",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Telefone",
+            "fieldNameUnderscored": "telefone",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Email",
+            "fieldNameUnderscored": "email",
+            "fieldValidate": false
         }
     ],
     "fieldsContainOwnerManyToMany": false,
@@ -20,7 +41,7 @@
     "fieldsContainBigDecimal": false,
     "fieldsContainDateTime": false,
     "fieldsContainDate": false,
-    "changelogDate": "20150502090422",
+    "changelogDate": "20150523005911",
     "pagination": "infinite-scroll",
-    "validation": true
+    "validation": false
 }

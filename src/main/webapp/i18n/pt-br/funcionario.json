@@ -3,16 +3,19 @@
         "funcionario" : {
             "home": {
                 "title": "Funcionarios",
-                "createLabel": "Cria novo Funcionario",
-                "createOrEditLabel": "Criar ou editar um Funcionario"
+                "createLabel": "Create a new Funcionario",
+                "createOrEditLabel": "Create or edit a Funcionario"
             },
             "delete": {
-                "question": "tem a certeza que pretende apagar o Funcionario {{ id }}?"
+                "question": "Are you sure you want to delete Funcionario {{ id }}?"
             },
             "detail": {
                 "title": "Funcionario"
             },
-            "nome": "Nome"
+            "bi": "Bi",
+            "nome": "Nome",
+            "telefone": "Telefone",
+            "email": "Email"
         }
     }
 }

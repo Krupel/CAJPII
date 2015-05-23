@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -39,7 +38,7 @@ public class FuncionarioResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody Funcionario funcionario) throws URISyntaxException {
+    public ResponseEntity<Void> create(@RequestBody Funcionario funcionario) throws URISyntaxException {
         log.debug("REST request to save Funcionario : {}", funcionario);
         if (funcionario.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new funcionario cannot already have an ID").build();
@@ -55,7 +54,7 @@ public class FuncionarioResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody Funcionario funcionario) throws URISyntaxException {
+    public ResponseEntity<Void> update(@RequestBody Funcionario funcionario) throws URISyntaxException {
         log.debug("REST request to update Funcionario : {}", funcionario);
         if (funcionario.getId() == null) {
             return create(funcionario);

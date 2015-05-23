@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="girosApp.tecnico.detail.title">Tecnico</span> {{tecnico.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="girosApp.tecnico.nome">Nome</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tecnico.nome}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.tecnico.bi">Bi</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tecnico.bi}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.tecnico.telefone">Telefone</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tecnico.telefone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.tecnico.email">Email</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tecnico.email}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="tecnico"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

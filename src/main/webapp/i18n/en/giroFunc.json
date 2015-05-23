@@ -1,0 +1,19 @@
+{
+    "girosApp": {
+        "giroFunc" : {
+            "home": {
+                "title": "GiroFuncs",
+                "createLabel": "Create a new GiroFunc",
+                "createOrEditLabel": "Create or edit a GiroFunc"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete GiroFunc {{ id }}?"
+            },
+            "detail": {
+                "title": "GiroFunc"
+            },
+            "Tecnico": "Tecnico",
+            "GiroCab": "GiroCab"
+        }
+    }
+}

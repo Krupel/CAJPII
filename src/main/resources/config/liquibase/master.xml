@@ -6,12 +6,15 @@
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502090328_added_entity_Tipologia.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20150502090422_added_entity_Funcionario.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502110832_added_entity_Amigos.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502113234_added_entity_GirosCab.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502113500_added_entity_GirosLin.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150502113639_added_entity_GirosFunc.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150523003335_added_entity_Utente.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150523004640_added_entity_HistoricoUtente.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150523011248_added_entity_Tecnico.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150523011556_added_entity_GiroCab.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150523013958_added_entity_GiroLin.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150523014043_added_entity_GiroFunc.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

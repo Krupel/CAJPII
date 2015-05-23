@@ -1,0 +1,20 @@
+{
+    "girosApp": {
+        "giroCab" : {
+            "home": {
+                "title": "GiroCabs",
+                "createLabel": "Créer un nouveau GiroCab",
+                "createOrEditLabel": "Créer ou éditer un GiroCab"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GiroCab {{ id }} ?"
+            },
+            "detail": {
+                "title": "GiroCab"
+            },
+            "data": "Data",
+            "observacoes": "Observacoes"
+        }
+    }
+}
+

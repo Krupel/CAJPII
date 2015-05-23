@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity GiroFunc.
+    -->
+    <changeSet id="20150523014043" author="jhipster">
+        <createTable tableName="T_GIROFUNC">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tecnico_id" type="bigint"/>
+            <column name="girocab_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="tecnico_id"
+                                 baseTableName="T_GIROFUNC"
+                                 constraintName="fk_girofunc_tecnico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_TECNICO"/>
+
+        <addForeignKeyConstraint baseColumnNames="girocab_id"
+                                 baseTableName="T_GIROFUNC"
+                                 constraintName="fk_girofunc_girocab_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_GIROCAB"/>
+
+    </changeSet>
+</databaseChangeLog>

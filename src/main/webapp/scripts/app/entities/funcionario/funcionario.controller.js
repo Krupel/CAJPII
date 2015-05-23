@@ -56,7 +56,7 @@ angular.module('girosApp')
         };
 
         $scope.clear = function () {
-            $scope.funcionario = {nome: null, id: null};
+            $scope.funcionario = {bi: null, nome: null, telefone: null, email: null, id: null};
             $scope.editForm.$setPristine();
             $scope.editForm.$setUntouched();
         };

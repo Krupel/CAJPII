@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="girosApp.giroCab.detail.title">GiroCab</span> {{giroCab.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="girosApp.giroCab.data">Data</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{giroCab.data}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="girosApp.giroCab.observacoes">Observacoes</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{giroCab.observacoes}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="giroCab"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
