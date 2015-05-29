@@ -8,8 +8,10 @@ angular.module('girosApp')
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    var dataFrom = data.data.split("-");
-                    data.data = new Date(new Date(dataFrom[0], dataFrom[1] - 1, dataFrom[2]));
+                    if(data.data!=null) {
+                        var dataFrom = data.data.split("-");
+                        data.data = new Date(new Date(dataFrom[0], dataFrom[1] - 1, dataFrom[2]));
+                    }
                     return data;
                 }
             },

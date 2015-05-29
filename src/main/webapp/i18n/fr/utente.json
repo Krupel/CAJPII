@@ -22,7 +22,8 @@
             "dataregisto": "Dataregisto",
             "caracteristicas": "Caracteristicas",
             "activo": "Activo",
-            "tipologiaAmigos": "tipologiaAmigos"
+            "tipologiaAmigos": "tipologiaAmigos",
+            "tipologia": "tipologia"
         }
     }
 }

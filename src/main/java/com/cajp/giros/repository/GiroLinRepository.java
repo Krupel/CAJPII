@@ -1,8 +1,14 @@
 package com.cajp.giros.repository;
 
 import com.cajp.giros.domain.GiroLin;
+import com.cajp.giros.domain.GiroCab;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 
+import javax.persistence.TemporalType;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,4 +16,8 @@ import java.util.List;
  */
 public interface GiroLinRepository extends JpaRepository<GiroLin,Long> {
 
+    String FIND_RESUMO = "SELECT gl FROM GiroLin gl LEFT join gl.giroCab";
+
+    @Query(FIND_RESUMO)
+    Page<GiroLin> findResumo(Pageable pageable);
 }

@@ -7,6 +7,7 @@ import com.cajp.giros.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -75,6 +76,37 @@ public class UtenteResource {
         throws URISyntaxException {
         Page<Utente> page = utenteRepository.findAll(PaginationUtil.generatePageRequest(offset, limit));
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/utentes", offset, limit);
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/utentesfilternamenacio",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Utente>> getfilter(
+        @RequestParam(value = "page", required = false) Integer offset,
+        @RequestParam(value = "per_page", required = false) Integer limit,
+        @RequestParam(value = "name", required = false) String name,
+        @RequestParam(value = "nacio", required = false) String nacio
+    )
+        throws URISyntaxException {
+        Page<Utente> page;
+        Pageable r = PaginationUtil.generatePageRequest(offset, limit);
+
+        if (name==""){
+            name = "%";
+        }else{
+            name = '%'+name+'%';
+        }
+        if (nacio==""){
+            nacio = "%";
+        }else{
+            nacio = '%'+nacio+'%';
+        }
+        page = utenteRepository.findByNameNacio(name, nacio, r);
+
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/utentes", offset, limit);
+
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 

@@ -1,18 +1,45 @@
 'use strict';
 
 angular.module('girosApp')
-    .controller('UtenteController', function ($scope, Utente, Tipologia, ParseLinks) {
+    .controller('UtenteController', function ($scope, Utente, Tipologia, ParseLinks,$http) {
         $scope.utentes = [];
         $scope.tipologias = Tipologia.query();
         $scope.page = 1;
+        $scope.pesqName = "";
+        $scope.pesqNacio = "";
         $scope.loadAll = function() {
             Utente.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
                 for (var i = 0; i < result.length; i++) {
                     $scope.utentes.push(result[i]);
+
                 }
             });
+
         };
+
+        $scope.pesquisar = function(){
+            $http({
+                method:'GET',
+                url:'api/utentesfilternamenacio',
+                params: {name:$scope.pesqName,nacio:$scope.pesqNacio}
+            }).
+                success(function(data){
+                    $scope.utentes =[];
+                    for (var i = 0; i < data.length; i++) {
+                        var myvalue =angular.fromJson(data[i])
+                        $scope.utentes.push(angular.fromJson(data[i]));
+
+                    }
+                });
+
+        };
+
+        $http({method: 'GET', url: 'scripts/app/paises/paises.json'}).success(function(data)
+        {
+            $scope.paises = data; // response data
+        });
+
         $scope.reset = function() {
             $scope.page = 1;
             $scope.utentes = [];
@@ -22,6 +49,7 @@ angular.module('girosApp')
             $scope.page = page;
             $scope.loadAll();
         };
+
         $scope.loadAll();
 
         $scope.create = function () {

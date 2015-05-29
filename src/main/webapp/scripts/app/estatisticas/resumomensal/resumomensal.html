@@ -1,4 +1,40 @@
 <div ng-cloak>
 
     Resumo mensal
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>nome</th>
+                <th>dataNasc</th>
+                <th>Sem Tecto</th>
+                <th>Sem casa</th>
+                <th>Grupo de risco</th>
+                <th>semana1</th>
+                <th>semana2</th>
+                <th>semana3</th>
+                <th>semana4</th>
+                <th>semana5</th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+            <tr ng-repeat="rs in listResumo track by $index">
+                <td>{{rs.id}}</td>
+                <td>{{rs.name}}</td>
+                <td>{{rs.dtNasc}}</td>
+                <td>{{rs.st}}</td>
+                <td>{{rs.sc}}</td>
+                <td>{{rs.gr}}</td>
+                <td>{{rs.s1}}</td>
+                <td>{{rs.s2}}</td>
+                <td>{{rs.s3}}</td>
+                <td>{{rs.s4}}</td>
+                <td>{{rs.s5}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+

@@ -1,5 +1,4 @@
 <div>
-
     <h2 translate="girosApp.utente.home.title">Utente</h2>
 
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveUtenteModal" ng-click="clear()">
@@ -125,6 +124,33 @@
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <div class="search">
+        <div class="form-group">
+            <label translate="girosApp.utente.nome">Nome</label>
+            <input type="text" name="nome" ng-model="pesqName">
+
+            <label translate="girosApp.utente.nacionalidade">Nacionalidade</label>
+            <select ng-model="pesqNacio">
+                <option></option>
+                <option ng-value="pais.name" ng-repeat="pais in paises.paises">{{pais.name}}</option>
+
+            </select>
+            <label translate="girosApp.utente.tipologia">Tipologia</label>
+            <select ng-model="pesqTipologia">
+                <option></option>
+                <option ng-value="tipologia.id" ng-repeat="tipologia in tipologias">{{tipologia.nome}}</option>
+
+            </select>
+            <button type="submit" ng-click="pesquisar()">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="form-group">
+
+
         </div>
     </div>
 
