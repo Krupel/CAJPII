@@ -18,8 +18,8 @@
             <column name="giroscab_id" type="bigint"/>
             <column name="funcionario_id" type="bigint"/>
         </createTable>
-        
-        <addForeignKeyConstraint baseColumnNames="giroscab_id"
+
+        <!--addForeignKeyConstraint baseColumnNames="giroscab_id"
                                  baseTableName="T_GIROSFUNC"
                                  constraintName="fk_girosfunc_giroscab_id"
                                  referencedColumnNames="id"
@@ -29,7 +29,7 @@
                                  baseTableName="T_GIROSFUNC"
                                  constraintName="fk_girosfunc_funcionario_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="T_FUNCIONARIO"/>
+                                 referencedTableName="T_FUNCIONARIO"/-->
 
     </changeSet>
 </databaseChangeLog>
