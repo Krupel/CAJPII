@@ -7,7 +7,7 @@ spring:
     datasource:
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
         url: jdbc:mysql://localhost:3306/Giros
-        databaseName:
+        databaseName: Giros
         serverName: localhost
         username: Giros
         password: Giros
