@@ -38,6 +38,69 @@
             </tr>
             </tbody>
         </table>
+        <table>
+            <tr>
+                <td>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Idades</th>
+                            <th>Valor</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <th>menor que 20</th>
+                            <th>{{listIdades[0]}}</th>
+                        </tr>
+                        <tr>
+                            <th>entre 20 e 29 </th>
+                            <th>{{listIdades[1]}}</th>
+                        </tr>
+                        <tr>
+                            <th>entre 30 e 39 </th>
+                            <th>{{listIdades[2]}}</th>
+                        </tr>
+                        <tr>
+                            <th>entre 40 e 49 </th>
+                            <th>{{listIdades[3]}}</th>
+                        </tr>
+                        <tr>
+                            <th> maior que 50</th>
+                            <th>{{listIdades[4]}}</th>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Nacionalidade</th>
+                            <th>Quantidade</th>
+                        </tr>
+                        </thead>
+                        <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                        <tr ng-repeat="nc in listNacionalidade track by $index">
+                            <td>{{nc.nacionalidade}}</td>
+                            <td>{{nc.quant}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sem Tecto
+                </td>
+                <td>{{sTecto}}</td>
+                <td>
+                    Sem Casa
+                </td>
+                <td>{{sCasa}}</td>
+                <td>
+                    Grupo de risco
+                </td>
+                <td>{{gRisco}}</td>
+            </tr>
+        </table>
     </div>
 </div>
 

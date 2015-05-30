@@ -1,16 +1,25 @@
 'use strict';
 
 angular.module('girosApp')
-    .controller('ResumoMensalController', function ($scope, Amigos,Principal,$http,GiroLin) {
+    .controller('ResumoMensalController', function ($scope, Amigos,Principal,$http,GiroLin,ParseLinks) {
         Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
 
-        $scope.listResumo = [];
+        $scope.resumo=[];
         $scope.weeks =[];
         $scope.month = 0;
         $scope.year = 1900;
+
+        $scope.listResumo = [];
+        $scope.listNacionalidade = [];
+        $scope.listIdades = [0, 0, 0, 0, 0];
+        $scope.sTecto=0;
+        $scope.sCasa=0;
+        $scope.gRisco=0;
+        $scope.sf=0;
+        $scope.sm=0;
 
         $scope.rebuildResumo = function(){
             var tempResumo =
@@ -163,28 +172,104 @@ angular.module('girosApp')
             }
 
             $scope.rebuildResumo();
+
+            $scope.estats();
         };
 
         $scope.daysInMonth = function(month,year) {
             return new Date(year, month, 0).getDate();
         }
 
-        $scope.pesquisar = function(month,year){
-            $http({
-                method:'GET',
-                url:'api/resumobydatas',
-                params: {date_de:$scope.formatDate(new Date("2015/01/01")),date_ate:$scope.formatDate(new Date("2016/01/01"))}
-            }).
-                success(function(data){
-                    $scope.resumo =[];
-                    for (var i = 0; i < data.length; i++) {
-                        $scope.resumo.push(angular.fromJson(data[i]));
+        $scope.estats = function(){
+
+            //$scope.listResumo -> lista resumo
+            //$scope.resumo.length -> lista completa
+
+            var existe=false;
+            var iidade;
+            var nac =
+            {
+                nacionalidade:"",
+                quant:0,
+            };
+
+            for (var i = 0; i < $scope.listResumo.length; i++) {
+                if($scope.listResumo[i].tipo === 1)
+                    $scope.sTecto=$scope.sTecto+1;
+                if($scope.listResumo[i].tipo === 2)
+                    $scope.sCasa=$scope.sCasa+1;
+                if($scope.listResumo[i].tipo === 3)
+                    $scope.gRisco=$scope.gRisco+1;
+
+                if($scope.listResumo[i].sexo === "f")
+                    $scope.sf=$scope.sf+1;
+                else
+                    $scope.sm=$scope.sm+1;
+
+
+                //Json Nacionalidade
+                if(i===0){
+                    nac.nacionalidade = $scope.listResumo[i].nacionalidade;
+                    nac.quant=1;
+                    $scope.listNacionalidade.push(nac);
+                }
+                else{
+                    existe=false;
+                    for (var m = 0; m < $scope.listNacionalidade.length; m++) {
+                        if($scope.listResumo[i].nacionalidade === $scope.listNacionalidade[m].nacionalidade){
+                            existe=true;
+
+                            $scope.listNacionalidade[m].quant = $scope.listNacionalidade[m].quant +1;
+                        }
                     }
+                    if(existe===false){
+                        nac =
+                        {
+                            nacionalidade:"",
+                            quant:"",
+                        };
+                        nac.nacionalidade = $scope.listResumo[i].nacionalidade;
+                        nac.quant=1;
+                        $scope.listNacionalidade.push(nac);
+                    }
+                }
 
-                    $scope.listResumo = [];
-                    $scope.fillWeeks(month,year);
-                });
+                //Json Idade
+                iidade = $scope.idade($scope.listResumo[i].dtNasc);
+                if (iidade <20)
+                    $scope.listIdades[0]=$scope.listIdades[0]+1;
+                if (iidade >= 20 && iidade <=29)
+                    $scope.listIdades[1]=$scope.listIdades[1]+1;
+                if (iidade > 29 && iidade <=39)
+                    $scope.listIdades[2]=$scope.listIdades[2]+1;
+                if (iidade > 39 && iidade <=49)
+                    $scope.listIdades[3]=$scope.listIdades[3]+1;
+                if (iidade > 49)
+                    $scope.listIdades[4]=$scope.listIdades[4]+1;
+            }
+        };
 
+        $scope.idade = function(dtNasc){
+            var today = new Date();
+            var birthDate = new Date(dtNasc);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        };
+
+        $scope.pesquisar = function(month,year){
+            $scope.listResumo = [];
+            GiroLin.query({page: $scope.page, per_page: 20}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+                for (var i = 0; i < result.length; i++) {
+                    $scope.resumo.push(result[i]);
+                }
+            });
+
+            $scope.fillWeeks(month,year);
         };
 
         $scope.formatDate = function(date) {

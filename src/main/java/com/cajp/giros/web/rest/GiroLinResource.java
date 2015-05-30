@@ -21,6 +21,7 @@ import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -95,10 +96,11 @@ public class GiroLinResource {
     public ResponseEntity<List<GiroLin>> getResumo(
         @RequestParam(value = "page", required = false) Integer offset,
         @RequestParam(value = "per_page", required = false) Integer limit,
-        @RequestParam(value = "date_de", required = false) String date_de,
-        @RequestParam(value = "date_ate", required = false) String date_ate)
-        throws URISyntaxException {
+        @RequestParam(value = "date_de", required = false) Date date_de,
+        @RequestParam(value = "date_ate", required = false) Date date_ate)
+        throws URISyntaxException, ParseException {
         Pageable r = PaginationUtil.generatePageRequest(offset, limit);
+
         Page<GiroLin> page = giroLinRepository.findResumo(date_de,date_ate,r);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/giroLins", offset, limit);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);

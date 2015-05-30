@@ -19,5 +19,5 @@ public interface GiroLinRepository extends JpaRepository<GiroLin,Long> {
     String FIND_RESUMO = "SELECT gl FROM GiroLin gl LEFT join gl.giroCab where gl.giroCab.data >= :date_de and gl.giroCab.data <= :date_ate ";
 
     @Query(FIND_RESUMO)
-    Page<GiroLin> findResumo(@Param("date_de") String date_de,@Param("date_ate") String date_ate,Pageable pageable);
+    Page<GiroLin> findResumo(@Param("date_de") Date date_de,@Param("date_ate") Date date_ate,Pageable pageable);
 }
