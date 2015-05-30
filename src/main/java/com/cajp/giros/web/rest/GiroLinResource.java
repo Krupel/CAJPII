@@ -18,9 +18,13 @@ import javax.inject.Inject;
 import javax.persistence.TemporalType;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.SimpleFormatter;
 
 /**
  * REST controller for managing GiroLin.
@@ -90,10 +94,12 @@ public class GiroLinResource {
     @Timed
     public ResponseEntity<List<GiroLin>> getResumo(
         @RequestParam(value = "page", required = false) Integer offset,
-        @RequestParam(value = "per_page", required = false) Integer limit)
+        @RequestParam(value = "per_page", required = false) Integer limit,
+        @RequestParam(value = "date_de", required = false) String date_de,
+        @RequestParam(value = "date_ate", required = false) String date_ate)
         throws URISyntaxException {
         Pageable r = PaginationUtil.generatePageRequest(offset, limit);
-        Page<GiroLin> page = giroLinRepository.findResumo(r);
+        Page<GiroLin> page = giroLinRepository.findResumo(date_de,date_ate,r);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/giroLins", offset, limit);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

@@ -54,13 +54,22 @@ public class GiroCabResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@RequestBody GiroCab giroCab) throws URISyntaxException {
+    public ResponseEntity<GiroCab> update(@RequestBody GiroCab giroCab) throws URISyntaxException {
         log.debug("REST request to update GiroCab : {}", giroCab);
         if (giroCab.getId() == null) {
-            return create(giroCab);
+            create(giroCab);
+            return Optional.ofNullable(giroCabRepository.findOne(giroCab.getId()))
+                .map(tempGiroCab -> new ResponseEntity<>(
+                    giroCab,
+                    HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
         }
         giroCabRepository.save(giroCab);
-        return ResponseEntity.ok().build();
+        return Optional.ofNullable(giroCabRepository.findOne(giroCab.getId()))
+            .map(tempGiroCab -> new ResponseEntity<>(
+                giroCab,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     /**
