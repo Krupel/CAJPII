@@ -1,14 +1,14 @@
 {
     "main": {
-        "title": "Welcome, CAJP plataform!",
-        "subtitle": "friendly hand",
+        "title": "Welcome",
+        "subtitle": "Dedicated platform for Centro de Acolhimento João Paulo II.",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
         "question": "If you have any question:",
         "link": {
-            "homepage": "CAJP homepage",
-            "contact": " + 351 239 718 001"
+            "homepage": "Homepage",
+            "contact": "Contact"
         }
     }
 }

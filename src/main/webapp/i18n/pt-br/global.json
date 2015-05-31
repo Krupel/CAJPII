@@ -1,6 +1,6 @@
 {
     "global": {
-        "title": "Giros",
+        "title": "Intervenção direta \"Mão amiga\"",
         "browsehappy": "Está a utilizar um browser <strong>desactualizado</strong>. Faça o favor de <a href=\"http://browsehappy.com/?locale=pt_BR\">actualizar o seu browser</a> para ter uma experiência melhor.",
         "menu": {
             "home": "Início",
@@ -117,5 +117,6 @@
             "datetimelocal": "O campo é do tipo Data/Hora."
         }
     },
-    "footer": "Centro de Acolhimento João Paulo II @ Coimbra"
+    "footer": "",
+    "developedby": "Desenvolvido por"
 }

@@ -1,7 +1,7 @@
 {
     "health": {
         "title": "Estado do Sistema",
-        "refresh.button": "Actualizar",
+        "refresh.button": "Atualizar",
         "stacktrace": "Stacktrace",
         "indicator": {
             "diskSpace": "Espaço em disco",
