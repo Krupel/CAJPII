@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Create or edit a GiroCab"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroCab {{ id }}?"
+                "question": "Are you sure you want to delete GiroCab \"{{ value }}\"?"
             },
             "detail": {
                 "title": "GiroCab"

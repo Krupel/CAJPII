@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Criar ou editar Utente"
             },
             "delete": {
-                "question": "Tem a certeza que pretende eliminar o Utente {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o Utente \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Utente"

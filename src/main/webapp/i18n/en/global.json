@@ -98,7 +98,8 @@
             "delete": "Delete",
             "edit": "Edit",
             "save": "Save",
-            "view": "View"
+            "view": "View",
+            "clean": "Clean"
         },
         "detail": {
             "field": "Field",

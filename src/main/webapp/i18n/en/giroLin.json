@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Create or edit a GiroLin"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroLin {{ id }}?"
+                "question": "Are you sure you want to delete GiroLin \"{{ value }}\"?"
             },
             "detail": {
                 "title": "GiroLin"

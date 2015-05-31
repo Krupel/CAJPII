@@ -98,7 +98,8 @@
             "delete": "Eliminar",
             "edit": "Editar",
             "save": "Guardar",
-            "view": "Visualizar"
+            "view": "Visualizar",
+            "clean": "Limpar"
         },
         "detail": {
             "field": "Campo",

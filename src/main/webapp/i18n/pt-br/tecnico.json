@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Criar ou editar Técnico"
             },
             "delete": {
-                "question": "Tem a certeza certeza que pretende eliminar o Técnico {{ id }}?"
+                "question": "Tem a certeza certeza que pretende eliminar o Técnico \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Técnico"

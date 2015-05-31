@@ -154,3 +154,15 @@ Custom
     color: #959595;
     text-align: center;
 }
+
+.nav-columns {
+    padding-left: 0px 15px 15px 15px;
+}
+
+.nav-columns li {
+    padding-left: 10px;
+}
+
+.space {
+    padding: 35px 15px 15px 15px;
+}

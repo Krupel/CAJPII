@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Criar ou editar HistoricoUtente"
             },
             "delete": {
-                "question": "Tem a certeza que pretende eliminar o HistoricoUtente {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o HistoricoUtente \"{{ value }}\"?"
             },
             "detail": {
                 "title": "HistoricoUtente"
