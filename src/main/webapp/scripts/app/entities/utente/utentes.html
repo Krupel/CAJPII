@@ -1,13 +1,15 @@
 <div>
-    <h2 translate="girosApp.utente.home.title">Utente</h2>
+    <h1 translate="girosApp.utente.home.title">Utente</h1>
 
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveUtenteModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.utente.home.createLabel">Create a new Utente</span>
     </button>
+
     <div class="modal fade" id="saveUtenteModal" tabindex="-1" role="dialog" aria-labelledby="myUtenteLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+
                 <form name="editForm" role="form" novalidate ng-submit="create()">
 
                     <div class="modal-header">
@@ -127,30 +129,50 @@
         </div>
     </div>
 
+    <br><br>
     <div class="search">
         <div class="form-group">
-            <label translate="girosApp.utente.nome">Nome</label>
-            <input type="text" name="nome" ng-model="pesqName">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label translate="girosApp.utente.nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" ng-model="pesqName">
+                </div>
+            </div>
 
+            <br>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label translate="girosApp.utente.caracteristicas">Caracteristicas</label>
+                    <input type="text" class="form-control" name="caract" ng-model="pesqCaract">
+                </div>
+            </div>
+
+            <br>
             <label translate="girosApp.utente.nacionalidade">Nacionalidade</label>
-            <select ng-model="pesqNacio">
+            <select ng-model="pesqNacio" class="dropdown">
                 <option></option>
                 <option ng-value="pais.name" ng-repeat="pais in paises.paises">{{pais.name}}</option>
-
             </select>
+
+            <br>
             <label translate="girosApp.utente.tipologia">Tipologia</label>
             <select ng-model="pesqTipologia">
                 <option></option>
-                <option ng-value="tipologia.id" ng-repeat="tipologia in tipologias">{{tipologia.nome}}</option>
-
+                <option ng-value="tipologia.id" ng-repeat="tipologia in tipologias">{{tipologia.descricao}}</option>
             </select>
-            <button type="submit" ng-click="pesquisar()">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div class="form-group">
 
-
+            <div class="text-right">
+                <!-- button type="submit" ng-click="pesquisar()" class="btn btn-success btn-md">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    &nbsp;
+                    Pesquisar
+                </1--button -->
+                <button type="submit" ng-click="limpar()" class="btn btn-default btn-md">
+                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                    &nbsp;
+                    Limpar
+                </button>
+            </div>
         </div>
     </div>
 
@@ -160,48 +182,44 @@
                 <tr>
                     <th>ID</th>
                     <th translate="girosApp.utente.nome">Nome</th>
-                    <th translate="girosApp.utente.datanascimento">Datanascimento</th>
-                    <th translate="girosApp.utente.bi">Bi</th>
-                    <th translate="girosApp.utente.validadebi">Validadebi</th>
+                    <th translate="girosApp.utente.datanascimento">Data de Nascimento</th>
+                    <th translate="girosApp.utente.bi">BI/CC</th>
                     <th translate="girosApp.utente.sexo">Sexo</th>
-                    <th translate="girosApp.utente.niss">Niss</th>
+                    <th translate="girosApp.utente.niss">NISS</th>
                     <th translate="girosApp.utente.nacionalidade">Nacionalidade</th>
-                    <th translate="girosApp.utente.dataregisto">Dataregisto</th>
-                    <th translate="girosApp.utente.caracteristicas">Caracteristicas</th>
-                    <th translate="girosApp.utente.activo">Activo</th>
-                    <th translate="girosApp.utente.tipologiaAmigos">tipologiaAmigos</th>
+                    <th translate="girosApp.utente.dataregisto">Data Registo</th>
+                    <th translate="girosApp.utente.caracteristicas">Características</th>
+                    <th translate="girosApp.utente.tipologia">Tipologia</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
-                <tr ng-repeat="utente in utentes">
+                <tr ng-repeat="utente in utentes | filter:{nome:pesqName,nacionalidade:pesqNacio,caracteristicas:pesqCaract,tipologia:pesqTipologia}">
                     <td><a ui-sref="utenteDetail({id:utente.id})">{{utente.id}}</a></td>
                     <td>{{utente.nome}}</td>
                     <td>{{utente.datanascimento}}</td>
                     <td>{{utente.bi}}</td>
-                    <td>{{utente.validadebi}}</td>
                     <td>{{utente.sexo}}</td>
                     <td>{{utente.niss}}</td>
                     <td>{{utente.nacionalidade}}</td>
                     <td>{{utente.dataregisto}}</td>
                     <td>{{utente.caracteristicas}}</td>
-                    <td>{{utente.activo}}</td>
-                    <td>{{utente.tipologiaAmigos.id}}</td>
+                    <td>{{utente.tipologiaAmigos.descricao}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="utenteDetail({id:utente.id})"
                                 class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
                         </button>
                         <button type="submit"
                                 ng-click="update(utente.id)"
                                 class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                         <button type="submit"
                                 ng-click="delete(utente.id)"
                                 class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
                         </button>
                     </td>
                 </tr>

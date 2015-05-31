@@ -3,7 +3,7 @@
         "title": "Autenticação",
         "form": {
             "password": "Senha",
-            "password.placeholder": "Sua senha",
+            "password.placeholder": "A sua senha",
             "rememberme": "Manter-me logado",
             "button": "Entrar"
         },

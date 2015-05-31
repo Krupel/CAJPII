@@ -2,18 +2,18 @@
     "girosApp": {
         "tecnico" : {
             "home": {
-                "title": "Tecnicos",
-                "createLabel": "Create a new Tecnico",
-                "createOrEditLabel": "Create or edit a Tecnico"
+                "title": "Técnicos",
+                "createLabel": "Criar Técnico",
+                "createOrEditLabel": "Criar ou editar Técnico"
             },
             "delete": {
-                "question": "Are you sure you want to delete Tecnico {{ id }}?"
+                "question": "Tem a certeza certeza que pretende eliminar o Técnico {{ id }}?"
             },
             "detail": {
-                "title": "Tecnico"
+                "title": "Técnico"
             },
             "nome": "Nome",
-            "bi": "Bi",
+            "bi": "BI/CC",
             "telefone": "Telefone",
             "email": "Email",
             "check": "Selecionado"

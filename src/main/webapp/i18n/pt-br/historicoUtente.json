@@ -3,11 +3,11 @@
         "historicoUtente" : {
             "home": {
                 "title": "HistoricoUtentes",
-                "createLabel": "Create a new HistoricoUtente",
-                "createOrEditLabel": "Create or edit a HistoricoUtente"
+                "createLabel": "Criar HistoricoUtente",
+                "createOrEditLabel": "Criar ou editar HistoricoUtente"
             },
             "delete": {
-                "question": "Are you sure you want to delete HistoricoUtente {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o HistoricoUtente {{ id }}?"
             },
             "detail": {
                 "title": "HistoricoUtente"

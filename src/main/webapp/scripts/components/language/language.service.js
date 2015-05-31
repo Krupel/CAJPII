@@ -6,6 +6,8 @@ angular.module('girosApp')
             getCurrent: function () {
                 var deferred = $q.defer();
                 var language = $translate.storage().get('NG_TRANSLATE_LANG_KEY');
+                // Default
+                //var language = 'pt-br';
 
                 if (angular.isUndefined(language)) {
                     language = 'pt-br';
@@ -27,8 +29,7 @@ angular.module('girosApp')
  They are written in English to avoid character encoding issues (not a perfect solution)
  */
     .constant('LANGUAGES', [
-        'en', 'fr'
-        ,'pt-br'
+        'en', 'pt-br'
         //JHipster will add new languages here
     ]
 );

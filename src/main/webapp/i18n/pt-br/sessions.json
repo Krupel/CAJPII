@@ -5,11 +5,11 @@
             "ipaddress": "IP",
             "useragent": "Agente",
             "date": "Data",
-            "button": "Invalidar"
+            "button": "Validar"
         },
         "messages": {
-            "success": "<strong>Sessão invalidada com sucesso!</strong>",
-            "error": "<strong>Ocorreu um erro!</strong> A sessão não pode ser invalidada."
+            "success": "<strong>Sessão validada com sucesso!</strong>",
+            "error": "<strong>Ocorreu um erro!</strong> A sessão não pode ser validada."
         }
     }
 }

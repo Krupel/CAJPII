@@ -3,27 +3,27 @@
         "utente" : {
             "home": {
                 "title": "Utentes",
-                "createLabel": "Create a new Utente",
-                "createOrEditLabel": "Create or edit a Utente"
+                "createLabel": "Criar Utente",
+                "createOrEditLabel": "Criar ou editar Utente"
             },
             "delete": {
-                "question": "Are you sure you want to delete Utente {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o Utente {{ id }}?"
             },
             "detail": {
                 "title": "Utente"
             },
             "nome": "Nome",
-            "datanascimento": "Datanascimento",
-            "bi": "Bi",
-            "validadebi": "Validadebi",
+            "datanascimento": "Data de Nascimento",
+            "bi": "BI/CC/Passaporte",
+            "validadebi": "Validade BI/CC",
             "sexo": "Sexo",
-            "niss": "Niss",
+            "niss": "NISS",
             "nacionalidade": "Nacionalidade",
-            "dataregisto": "Dataregisto",
-            "caracteristicas": "Caracteristicas",
+            "dataregisto": "Data de Registo",
+            "caracteristicas": "Características",
             "activo": "Activo",
-            "tipologiaAmigos": "tipologiaAmigos",
-            "tipologia": "tipologia"
+            "tipologiaAmigos": "Tipologia Amigos",
+            "tipologia": "Tipologia"
         }
     }
 }
