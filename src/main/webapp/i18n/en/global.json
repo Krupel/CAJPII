@@ -18,6 +18,7 @@
                 "giroFunc": "GiroFunc",
                 "giroLin": "GiroLin",
                 "giroCab": "GiroCab",
+                "giro": "Giro",
                 "tecnico": "Tecnico"
             },
             "account": {

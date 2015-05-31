@@ -4,7 +4,7 @@
         "form": {
             "password": "Senha",
             "password.placeholder": "A sua senha",
-            "rememberme": "Manter-me logado",
+            "rememberme": "Manter sessão ativa",
             "button": "Entrar"
         },
         "messages": {

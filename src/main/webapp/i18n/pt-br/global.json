@@ -17,7 +17,8 @@
                 "historicoUtente": "Histórico de Utentes",
                 "giroFunc": "Giro - Funcionários",
                 "giroLin": "Giro - Detalhes",
-                "giroCab": "Giro",
+                "giroCab": "Giro - Cabeçalho",
+                "giro": "Giro",
                 "tecnico": "Técnico"
             },
             "account": {

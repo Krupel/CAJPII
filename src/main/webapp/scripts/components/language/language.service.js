@@ -29,7 +29,7 @@ angular.module('girosApp')
  They are written in English to avoid character encoding issues (not a perfect solution)
  */
     .constant('LANGUAGES', [
-        'en', 'pt-br'
+        'pt-br', 'en'
         //JHipster will add new languages here
     ]
 );
