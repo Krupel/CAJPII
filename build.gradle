@@ -6,9 +6,8 @@ buildscript {
     dependencies {
         classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE')
         classpath('com.moowork.gradle:gradle-node-plugin:0.8')
-        
+
         classpath('com.moowork.gradle:gradle-grunt-plugin:0.6')
-        
     }
 }
 
@@ -128,7 +127,7 @@ dependencies {
         exclude(module: 'scalap')
         exclude(module: 'scala-compiler')
     }
-    compile group: 'mysql', name: 'mysql-connector-java'
+    compile group: 'org.postgresql', name: 'postgresql', version: postgresql_version
     compile group: 'fr.ippon.spark.metrics', name: 'metrics-spark-reporter', version: metrics_spark_reporter_version
     testCompile group: 'com.jayway.awaitility', name: 'awaitility', version: awaility_version
     testCompile group: 'com.jayway.jsonpath', name: 'json-path'
@@ -140,9 +139,8 @@ dependencies {
     testCompile group: 'com.mattbertolini', name: 'liquibase-slf4j', version: liquibase_slf4j_version
     testCompile group: 'org.hamcrest', name: 'hamcrest-library'
     testCompile group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: gatling_version
-    
-    testCompile group: 'com.h2database', name: 'h2'
 
+    testCompile group: 'com.h2database', name: 'h2'
 }
 
 task wrapper(type: Wrapper) {
