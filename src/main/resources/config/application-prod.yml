@@ -11,6 +11,7 @@ spring:
         serverName: ${DB_HOST}
         username: ${DB_USERNAME}
         password: ${DB_USERPASS}
+        port: ${DB_PORT}
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect

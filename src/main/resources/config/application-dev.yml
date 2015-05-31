@@ -11,6 +11,7 @@ spring:
         serverName: localhost
         username: postgres
         password: user
+        port: 5432
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect
