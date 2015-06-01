@@ -9,9 +9,7 @@ angular.module('girosApp')
                 // Default
                 //var language = 'pt-br';
 
-                if (angular.isUndefined(language)) {
-                    language = 'pt-br';
-                }
+                language = 'pt-br';
 
                 deferred.resolve(language);
                 return deferred.promise;
@@ -29,7 +27,7 @@ angular.module('girosApp')
  They are written in English to avoid character encoding issues (not a perfect solution)
  */
     .constant('LANGUAGES', [
-        'pt-br', 'en'
+        'pt-br'
         //JHipster will add new languages here
     ]
 );
