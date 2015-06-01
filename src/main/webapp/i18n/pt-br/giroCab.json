@@ -2,12 +2,12 @@
     "girosApp": {
         "giroCab" : {
             "home": {
-                "title": "Giro",
+                "title": "Lista de Giros",
                 "createLabel": "Criar Giro",
                 "createOrEditLabel": "Criar ou editar Giro"
             },
             "delete": {
-                "question": "Tem a certeza que pretender eliminar o Giro {{ id }}?"
+                "question": "Tem a certeza que pretender eliminar o Giro \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Giro"

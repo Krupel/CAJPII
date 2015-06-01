@@ -6,20 +6,20 @@
             "home": "Home",
             "entities": {
                 "main": "Entities",
-                "tipologia": "Tipologia",
+                "tipologia": "Tipology",
                 "funcionario": "Funcionario",
                 "amigos": "Amigos",
                 "girosFunc": "GirosFunc",
                 "girosLin": "GirosLin",
                 "girosCab": "GirosCab",
                 "additionalEntity": "CAJP will add addtional entities",
-                "utente": "Utente",
+                "utente": "Patient",
                 "historicoUtente": "HistoricoUtente",
-                "giroFunc": "GiroFunc",
-                "giroLin": "GiroLin",
-                "giroCab": "GiroCab",
+                "giroFunc": "Giro - Technicians",
+                "giroLin": "Giro - Lines",
+                "giroCab": "List of Giros",
                 "giro": "Giro",
-                "tecnico": "Tecnico"
+                "tecnico": "Technician"
             },
             "account": {
                 "main": "Account",

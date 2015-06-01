@@ -2,15 +2,15 @@
     "girosApp": {
         "giroCab" : {
             "home": {
-                "title": "GiroCabs",
-                "createLabel": "Create a new GiroCab",
-                "createOrEditLabel": "Create or edit a GiroCab"
+                "title": "List of Giro",
+                "createLabel": "Create a new Giro",
+                "createOrEditLabel": "Create or edit a Giro"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroCab \"{{ value }}\"?"
+                "question": "Are you sure you want to delete Giro \"{{ value }}\"?"
             },
             "detail": {
-                "title": "GiroCab"
+                "title": "Giro"
             },
             "id": "ID",
             "data": "Date",

@@ -19,13 +19,13 @@
                 </li>
                 <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <i class="fa fa-bar-chart"></i>
-                                    <span class="hidden-tablet" translate="global.menu.estatisticas.main">
-                                        estatisticas
-                                    </span>
-                                    <b class="caret"></b>
-                                </span>
+                        <span>
+                            <i class="fa fa-bar-chart"></i>
+                            <span class="hidden-tablet" translate="global.menu.estatisticas.main">
+                                estatisticas
+                            </span>
+                            <b class="caret"></b>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ><a ui-sref="resumomensal"><i class="fa fa-pie-chart"></i>
@@ -49,10 +49,11 @@
                         &#xA0;<span translate="global.menu.entities.tecnico">tecnico</span></a></li>
                         <li ui-sref-active="active"><a ui-sref="giro"><span class="glyphicon glyphicon-asterisk"></span>
                             &#xA0;<span translate="global.menu.entities.giro">giro</span></a></li>
+
+                        <li ui-sref-active="active" role="presentation" class="divider"></li>
+                        <li ui-sref-active="active"><a ui-sref="giroCab"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.entities.giroCab">giroCab</span></a></li>
                         <!-- Admin -->
-                        <li ui-sref-active="active" role="presentation" class="divider" ng-show="isInRole('ROLE_ADMIN')"></li>
-                        <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroCab"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.giroCab">giroCab</span></a></li>
                         <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroLin"><span class="glyphicon glyphicon-asterisk"></span>
                         &#xA0;<span translate="global.menu.entities.giroLin">giroLin</span></a></li>
                         <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroFunc"><span class="glyphicon glyphicon-asterisk"></span>
@@ -92,11 +93,11 @@
                 </li>
                 <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" ng-show="isInRole('ROLE_ADMIN')" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <i class="fa fa-wrench"></i>
-                                    <span class="hidden-tablet" translate="global.menu.admin.main">Admin</span>
-                                    <b class="caret"></b>
-                                </span>
+                        <span>
+                            <i class="fa fa-wrench"></i>
+                            <span class="hidden-tablet" translate="global.menu.admin.main">Admin</span>
+                            <b class="caret"></b>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="tracker"><span class="glyphicon glyphicon-eye-open"></span>
