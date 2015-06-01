@@ -117,7 +117,7 @@
 
                         <div class="form-group">
                             <label translate="girosApp.utente.tipologiaAmigos">tipologiaAmigos</label>
-                            <select class="form-control" name="tipologiaAmigos" ng-model="utente.tipologiaAmigos.id" ng-options="tipologia.id as tipologia.id for tipologia in tipologias">
+                            <select class="form-control" name="tipologiaAmigos" ng-model="utente.tipologiaAmigos.id" ng-options="tipologia.id as tipologia.descricao for tipologia in tipologias">
                             </select>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
-                <tr ng-repeat="utente in utentes | filter:{nome:pesqName,nacionalidade:pesqNacio,caracteristicas:pesqCaract,tipologia:pesqTipologia}">
+                <tr ng-repeat="utente in utentes | filter:{nome:pesqName,nacionalidade:pesqNacio,caracteristicas:pesqCaract,tipologiaAmigos:searchTipologia}">
                     <td ng-show="colIDVisible"><a ui-sref="utenteDetail({id:utente.id})">{{utente.id}}</a></td>
                     <td ng-show="colNomeVisible">{{utente.nome}}</td>
                     <td ng-show="colDataNascimentoVisible">{{utente.datanascimento}}</td>

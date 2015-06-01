@@ -40,6 +40,22 @@ angular.module('girosApp')
             });
         };
 
+        $scope.searchTipologia = function (utentes) {
+
+            if ($scope.pesqTipologia === undefined || $scope.pesqTipologia.length === 0) {
+                return true;
+            }
+
+            var found = false;
+
+            if (utentes.tipologiaAmigos.id === $scope.pesqTipologia) {
+               found = true;
+            }
+
+
+            return found;
+        };
+
         $scope.pesquisar = function(){
             $http({
                 method:'GET',
