@@ -12,6 +12,7 @@
             "detail": {
                 "title": "Giro"
             },
+            "id": "Identificador",
             "data": "Data",
             "observacoes": "Observações"
         }

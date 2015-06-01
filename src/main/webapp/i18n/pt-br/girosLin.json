@@ -12,6 +12,7 @@
             "detail": {
                 "title": "GirosLin"
             },
+            "id": "Identificador",
             "observacoes": "Observacoes",
             "GirosCab": "GirosCab",
             "Amigos": "Amigos"

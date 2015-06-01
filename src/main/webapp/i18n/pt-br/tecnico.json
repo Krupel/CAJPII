@@ -12,6 +12,7 @@
             "detail": {
                 "title": "Técnico"
             },
+            "id": "Identificador",
             "nome": "Nome",
             "bi": "BI/CC",
             "telefone": "Telefone",

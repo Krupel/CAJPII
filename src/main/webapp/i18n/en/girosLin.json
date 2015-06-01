@@ -12,7 +12,8 @@
             "detail": {
                 "title": "GirosLin"
             },
-            "observacoes": "Observacoes",
+            "id": "ID",
+            "observacoes": "Comments",
             "GirosCab": "GirosCab",
             "Amigos": "Amigos"
         }

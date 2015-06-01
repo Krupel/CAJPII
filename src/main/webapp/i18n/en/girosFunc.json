@@ -12,6 +12,7 @@
             "detail": {
                 "title": "GirosFunc"
             },
+            "id": "ID",
             "GirosCab": "GirosCab",
             "Funcionario": "Funcionario"
         }

@@ -12,6 +12,7 @@
             "detail": {
                 "title": "Utente"
             },
+            "id": "Identificador",
             "nome": "Nome",
             "datanascimento": "Data de Nascimento",
             "bi": "BI/CC/Passaporte",
@@ -22,7 +23,7 @@
             "dataregisto": "Data de Registo",
             "caracteristicas": "Características",
             "activo": "Activo",
-            "tipologiaAmigos": "Tipologia Amigos",
+            "tipologiaAmigos": "Tipologia",
             "tipologia": "Tipologia"
         }
     }

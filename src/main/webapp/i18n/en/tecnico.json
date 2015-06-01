@@ -12,9 +12,10 @@
             "detail": {
                 "title": "Tecnico"
             },
-            "nome": "Nome",
-            "bi": "Bi",
-            "telefone": "Telefone",
+            "id": "ID",
+            "nome": "Name",
+            "bi": "Personal ID",
+            "telefone": "Phone",
             "email": "Email",
             "check": "Selected"
         }

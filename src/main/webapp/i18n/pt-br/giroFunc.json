@@ -12,6 +12,7 @@
             "detail": {
                 "title": "GiroFunc"
             },
+            "id": "Identificador",
             "Tecnico": "Técnico",
             "GiroCab": "GiroCab"
         }

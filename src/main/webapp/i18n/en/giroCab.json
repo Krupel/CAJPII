@@ -12,8 +12,9 @@
             "detail": {
                 "title": "GiroCab"
             },
-            "data": "Data",
-            "observacoes": "Observacoes"
+            "id": "ID",
+            "data": "Date",
+            "observacoes": "Text"
         }
     }
 }

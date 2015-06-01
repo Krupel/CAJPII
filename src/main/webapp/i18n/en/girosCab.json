@@ -12,8 +12,9 @@
             "detail": {
                 "title": "GirosCab"
             },
-            "data": "Data",
-            "observacoes": "Observacoes"
+            "id": "ID",
+            "data": "Date",
+            "observacoes": "Comments"
         }
     }
 }

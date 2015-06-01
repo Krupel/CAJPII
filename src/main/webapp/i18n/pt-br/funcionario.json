@@ -12,6 +12,7 @@
             "detail": {
                 "title": "Funcionário"
             },
+            "id": "Identificador",
             "bi": "BI/CC",
             "nome": "Nome",
             "telefone": "Telefone",

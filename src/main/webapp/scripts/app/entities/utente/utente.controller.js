@@ -10,6 +10,17 @@ angular.module('girosApp')
         $scope.pesqCaract = "";
         $scope.pesqTipologia = "";
 
+        $scope.colIDVisible = true;
+        $scope.colNomeVisible = true;
+        $scope.colDataNascimentoVisible = false;
+        $scope.colBIVisible = false;
+        $scope.colValidadeBIVisible = false;
+        $scope.colSexoVisible = true;
+        $scope.colNISSVisible = false;
+        $scope.colDataRegistoVisible = false;
+        $scope.colCaracteristicasVisible = false;
+        $scope.colTipologiaVisible = true;
+
         $scope.loadAllTipologias = function() {
             Tipologia.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
@@ -27,7 +38,6 @@ angular.module('girosApp')
 
                 }
             });
-
         };
 
         $scope.pesquisar = function(){
@@ -51,7 +61,6 @@ angular.module('girosApp')
             $scope.pesqNacio = ""
             $scope.pesqTipologia = ""
             $scope.pesqCaract = ""
-            //$scope.pesquisar()
         };
 
         $http({method: 'GET', url: 'scripts/app/paises/paises.json'}).success(function(data)
@@ -63,12 +72,10 @@ angular.module('girosApp')
             $scope.page = 1;
             $scope.utentes = [];
             $scope.loadAll();
-            $scope.loadAllTipologias();
         };
         $scope.loadPage = function(page) {
             $scope.page = page;
             $scope.loadAll();
-            $scope.loadAllTipologias();
         };
 
         $scope.loadAll();

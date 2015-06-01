@@ -5,12 +5,28 @@
         <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.utente.home.createLabel">Create a new Utente</span>
     </button>
 
+    <div class="space">
+        <strong>Colunas visíveis:</strong>
+        <ul class="nav nav-pills nav-columns">
+            <li><input type="checkbox" ng-model="colIDVisible"> ID</li>
+            <li><input type="checkbox" ng-model="colNomeVisible"> <span translate="girosApp.utente.nome"> Nome</span></li>
+            <li><input type="checkbox" ng-model="colDataNascimentoVisible"> <span translate="girosApp.utente.datanascimento"> Column</span></li>
+            <li><input type="checkbox" ng-model="colBIVisible"> <span translate="girosApp.utente.bi"> Column</span></li>
+            <li><input type="checkbox" ng-model="colValidadeBIVisible"> <span translate="girosApp.utente.validadebi"> Column</span></li>
+            <li><input type="checkbox" ng-model="colSexoVisible"> <span translate="girosApp.utente.sexo"> Column</span></li>
+            <li><input type="checkbox" ng-model="colNISSVisible"> <span translate="girosApp.utente.niss"> Column</span></li>
+            <li><input type="checkbox" ng-model="colDataRegistoVisible"> <span translate="girosApp.utente.dataregisto"> Column</span></li>
+            <li><input type="checkbox" ng-model="colCaracteristicasVisible"> <span translate="girosApp.utente.caracteristicas"> Column</span></li>
+            <li><input type="checkbox" ng-model="colTipologiaVisible"> <span translate="girosApp.utente.tipologiaAmigos"> Column</span></li>
+        </ul>
+    </div>
+
     <div class="modal fade" id="saveUtenteModal" tabindex="-1" role="dialog" aria-labelledby="myUtenteLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
-                <form name="editForm" role="form" novalidate ng-submit="create()">
+                <form name="editForm" role="form" ng-submit="create()">
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -31,43 +47,63 @@
 
                         </div>
                         <div class="form-group">
-                            <label translate="girosApp.utente.datanascimento">Datanascimento</label>
+                            <label translate="girosApp.utente.datanascimento">Data de Nascimento</label>
                             <input type="date" class="form-control" name="datanascimento"
                                    ng-model="utente.datanascimento">
 
                         </div>
                         <div class="form-group">
-                            <label translate="girosApp.utente.bi">Bi</label>
-                            <input type="text" class="form-control" name="bi"
-                                   ng-model="utente.bi">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label translate="girosApp.utente.bi">Bi</label>
+                                    <input type="text" class="form-control" name="bi"
+                                           ng-model="utente.bi">
 
+                                </div>
+                                <div class="col-lg-6">
+                                    <label translate="girosApp.utente.validadebi">Validade BI</label>
+                                    <input type="date" class="form-control" name="validadebi"
+                                           ng-model="utente.validadebi">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <br>
+                            <label>
+                                <i class="fa fa-mars fa-lg"></i>
+                                <input type="radio" ng-model="utente.sexo" value="m">
+                                Masculino
+                            </label>
+                            &nbsp;
+                            <label>
+                                <i class="fa fa-venus fa-lg"></i>
+                                <input type="radio" ng-model="utente.sexo" value="f">
+                                Feminino
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label translate="girosApp.utente.niss">Niss</label>
+                                    <input type="text" class="form-control" name="niss"
+                                           ng-model="utente.niss">
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <label translate="girosApp.utente.nacionalidade">Nacionalidade</label>
+                                    <select ng-model="utente.nacionalidade" class="dropdown">
+                                        <option></option>
+                                        <option ng-value="pais.name" ng-repeat="pais in paises.paises">{{pais.name}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label translate="girosApp.utente.validadebi">Validadebi</label>
-                            <input type="date" class="form-control" name="validadebi"
-                                   ng-model="utente.validadebi">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="girosApp.utente.sexo">Sexo</label>
-                            <input type="text" class="form-control" name="sexo"
-                                   ng-model="utente.sexo">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="girosApp.utente.niss">Niss</label>
-                            <input type="text" class="form-control" name="niss"
-                                   ng-model="utente.niss">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="girosApp.utente.nacionalidade">Nacionalidade</label>
-                            <input type="text" class="form-control" name="nacionalidade"
-                                   ng-model="utente.nacionalidade">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="girosApp.utente.dataregisto">Dataregisto</label>
+                            <label translate="girosApp.utente.dataregisto">Data de Registo</label>
                             <input type="date" class="form-control" name="dataregisto"
                                    ng-model="utente.dataregisto">
 
@@ -75,13 +111,7 @@
                         <div class="form-group">
                             <label translate="girosApp.utente.caracteristicas">Caracteristicas</label>
                             <input type="text" class="form-control" name="caracteristicas"
-                                   ng-model="utente.caracteristicas">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="girosApp.utente.activo">Activo</label>
-                            <input type="checkbox" class="form-control" name="activo"
-                                   ng-model="utente.activo">
+                                   ng-model="utente.caracteristicas" rows="6">
 
                         </div>
 
@@ -114,7 +144,7 @@
                         <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
                     </div>
                     <div class="modal-body">
-                        <p translate="girosApp.utente.delete.question" translate-values="{id: '{{utente.id}}'}">Are you sure you want to delete this Utente?</p>
+                        <p translate="girosApp.utente.delete.question" translate-values="{value: '{{utente.nome}}'}">Are you sure you want to delete this Utente?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
@@ -180,27 +210,34 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th translate="girosApp.utente.nome">Nome</th>
-                    <th translate="girosApp.utente.sexo">Sexo</th>
-                    <th translate="girosApp.utente.nacionalidade">Nacionalidade</th>
-                    <th translate="girosApp.utente.caracteristicas">Características</th>
-                    <th translate="girosApp.utente.tipologia">Tipologia</th>
+                    <th ng-show="colIDVisible">ID</th>
+                    <th ng-show="colNomeVisible" translate="girosApp.utente.nome">Nome</th>
+                    <th ng-show="colDataNascimentoVisible" translate="girosApp.utente.datanascimento">DataNascimento</th>
+                    <th ng-show="colBIVisible" translate="girosApp.utente.bi">BI/CC</th>
+                    <th ng-show="colValidadeBIVisible" translate="girosApp.utente.validadebi">NISS</th>
+                    <th ng-show="colNISSVisible" translate="girosApp.utente.niss">NISS</th>
+                    <th ng-show="colSexoVisible" translate="girosApp.utente.sexo">Sexo</th>
+                    <th ng-show="colNacionalidadeVisible" translate="girosApp.utente.nacionalidade">Nacionalidade</th>
+                    <th ng-show="colDataRegistoVisible" translate="girosApp.utente.dataregisto">NISS</th>
+                    <th ng-show="colCaracteristicasVisible" translate="girosApp.utente.caracteristicas">Características</th>
+                    <th ng-show="colTipologiaVisible" translate="girosApp.utente.tipologia">Tipologia</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="utente in utentes | filter:{nome:pesqName,nacionalidade:pesqNacio,caracteristicas:pesqCaract,tipologia:pesqTipologia}">
-                    <td><a ui-sref="utenteDetail({id:utente.id})">{{utente.id}}</a></td>
-                    <td>{{utente.nome}}</td>
-                    <td>{{utente.datanascimento}}</td>
-                    <td>{{utente.bi}}</td>
-                    <td>{{utente.sexo}}</td>
-                    <td>{{utente.niss}}</td>
-                    <td>{{utente.nacionalidade}}</td>
-                    <td>{{utente.dataregisto}}</td>
-                    <td>{{utente.caracteristicas}}</td>
-                    <td>{{utente.tipologiaAmigos.descricao}}</td>
+                    <td ng-show="colIDVisible"><a ui-sref="utenteDetail({id:utente.id})">{{utente.id}}</a></td>
+                    <td ng-show="colNomeVisible">{{utente.nome}}</td>
+                    <td ng-show="colDataNascimentoVisible">{{utente.datanascimento}}</td>
+                    <td ng-show="colBIVisible">{{utente.bi}}</td>
+                    <td ng-show="colValidadeBIVisible">{{utente.validadebi}}</td>
+                    <td ng-show="colNISSVisible">{{utente.niss}}</td>
+                    <td ng-show="colSexoVisible" ng-if="utente.sexo === 'f' "><i class="fa fa-venus"></i></td>
+                    <td ng-show="colSexoVisible" ng-if="utente.sexo === 'm' "><i class="fa fa-mars"></i></td>
+                    <td ng-show="colDataRegistoVisible">{{utente.dataregisto}}</td>
+                    <td ng-show="colNacionalidadeVisible">{{utente.nacionalidade}}</td>
+                    <td ng-show="colCaracteristicasVisible">{{utente.caracteristicas}}</td>
+                    <td ng-show="colTipologiaVisible">{{utente.tipologiaAmigos.descricao}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="utenteDetail({id:utente.id})"
@@ -223,3 +260,4 @@
         </table>
     </div>
 </div>
+
