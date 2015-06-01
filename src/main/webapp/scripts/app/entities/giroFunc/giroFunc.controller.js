@@ -3,8 +3,8 @@
 angular.module('girosApp')
     .controller('GiroFuncController', function ($scope, GiroFunc, Tecnico, GiroCab, ParseLinks) {
         $scope.giroFuncs = [];
-        $scope.tecnicos = Tecnico.query();
-        $scope.girocabs = GiroCab.query();
+        $scope.tecnicos = [];
+        $scope.girocabs = [];
         $scope.page = 1;
         $scope.loadAll = function() {
             GiroFunc.query({page: $scope.page, per_page: 20}, function(result, headers) {
@@ -14,6 +14,25 @@ angular.module('girosApp')
                 }
             });
         };
+
+        $scope.loadAllGirosCabs = function() {
+            GiroCab.query({page: $scope.page, per_page: 20}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+                for (var i = 0; i < result.length; i++) {
+                    $scope.girocabs.push(result[i]);
+                }
+            });
+        };
+
+        $scope.loadAllTecnicos = function() {
+            Tecnico.query({page: $scope.page, per_page: 20}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+                for (var i = 0; i < result.length; i++) {
+                    $scope.tecnicos.push(result[i]);
+                }
+            });
+        };
+
         $scope.reset = function() {
             $scope.page = 1;
             $scope.giroFuncs = [];
@@ -24,6 +43,8 @@ angular.module('girosApp')
             $scope.loadAll();
         };
         $scope.loadAll();
+        $scope.loadAllGirosCabs();
+        $scope.loadAllTecnicos();
 
         $scope.create = function () {
             GiroFunc.update($scope.giroFunc,

@@ -26,12 +26,12 @@
 
                         <div class="form-group">
                             <label translate="girosApp.giroFunc.Tecnico">Tecnico</label>
-                            <select class="form-control" name="Tecnico" ng-model="giroFunc.tecnico.id" ng-options="tecnico.id as tecnico.id for tecnico in tecnicos">
+                            <select class="form-control" name="Tecnico" ng-model="giroFunc.tecnico.id" ng-options="tecnico.id as tecnico.nome for tecnico in tecnicos">
                             </select>
                         </div>
                         <div class="form-group">
                             <label translate="girosApp.giroFunc.GiroCab">GiroCab</label>
-                            <select class="form-control" name="GiroCab" ng-model="giroFunc.giroCab.id" ng-options="giroCab.id as giroCab.id for giroCab in girocabs">
+                            <select class="form-control" name="GiroCab" ng-model="giroFunc.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
                             </select>
                         </div>
                     </div>
@@ -86,8 +86,8 @@
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="giroFunc in giroFuncs">
                     <td><a ui-sref="giroFuncDetail({id:giroFunc.id})">{{giroFunc.id}}</a></td>
-                    <td>{{giroFunc.Tecnico.id}}</td>
-                    <td>{{giroFunc.GiroCab.id}}</td>
+                    <td>{{giroFunc.tecnico.nome}}</td>
+                    <td>{{giroFunc.giroCab.data}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="giroFuncDetail({id:giroFunc.id})"
