@@ -12,9 +12,10 @@
             "detail": {
                 "title": "HistoricoUtente"
             },
-            "data": "Data",
+            "id": "ID",
+            "data": "Date",
             "Utente": "Utente",
-            "Tipologia": "Tipologia"
+            "Tipologia": "Tipology"
         }
     }
 }

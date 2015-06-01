@@ -7,11 +7,12 @@
                 "createOrEditLabel": "Create or edit a GirosFunc"
             },
             "delete": {
-                "question": "Are you sure you want to delete GirosFunc {{ id }}?"
+                "question": "Are you sure you want to delete GirosFunc \"{{ value }}\"?"
             },
             "detail": {
                 "title": "GirosFunc"
             },
+            "id": "Identificador",
             "GirosCab": "GirosCab",
             "Funcionario": "Funcionario"
         }

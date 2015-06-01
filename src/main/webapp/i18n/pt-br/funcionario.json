@@ -2,17 +2,18 @@
     "girosApp": {
         "funcionario" : {
             "home": {
-                "title": "Funcionarios",
-                "createLabel": "Create a new Funcionario",
-                "createOrEditLabel": "Create or edit a Funcionario"
+                "title": "Funcionários",
+                "createLabel": "Criar Funcionário",
+                "createOrEditLabel": "Criar ou editar Funcionário"
             },
             "delete": {
-                "question": "Are you sure you want to delete Funcionario {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o Funcionário \"{{ value }}\"?"
             },
             "detail": {
-                "title": "Funcionario"
+                "title": "Funcionário"
             },
-            "bi": "Bi",
+            "id": "Identificador",
+            "bi": "BI/CC",
             "nome": "Nome",
             "telefone": "Telefone",
             "email": "Email"

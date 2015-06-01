@@ -2,18 +2,20 @@
     "girosApp": {
         "giroCab" : {
             "home": {
-                "title": "GiroCabs",
-                "createLabel": "Create a new GiroCab",
-                "createOrEditLabel": "Create or edit a GiroCab"
+                "title": "Lista de Giros",
+                "createLabel": "Criar Giro",
+                "createOrEditLabel": "Criar ou editar Giro"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroCab {{ id }}?"
+                "question": "Tem a certeza que pretender eliminar o Giro \"{{ value }}\"?"
             },
             "detail": {
-                "title": "GiroCab"
+                "title": "Giro"
             },
+            "id": "Identificador",
             "data": "Data",
-            "observacoes": "Observacoes"
+            "observacoes": "Observações",
+            "check": "Selecionado"
         }
     }
 }

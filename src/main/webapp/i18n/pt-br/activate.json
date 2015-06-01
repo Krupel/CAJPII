@@ -2,8 +2,8 @@
     "activate": {
         "title": "Ativação",
         "messages": {
-            "success": "<strong>Usuário ativado com sucesso.</strong> Favor <a href=\"#/login\">entrar no sistema</a>.",
-            "error": "<strong>O usuário não pode ser ativado.</strong> Favor utilize o formulário de cadastro para criar uma nova conta."
+            "success": "<strong>Utilizador ativado com sucesso.</strong> Por favor <a href=\"#/login\"> entre no sistema</a>.",
+            "error": "<strong>O utilizador não pode ser activado.</strong> Por favor utilize o formulário de registo para criar uma nova conta."
         }
     }
 }

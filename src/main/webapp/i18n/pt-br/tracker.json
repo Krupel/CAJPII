@@ -1,11 +1,11 @@
 {
     "tracker": {
-        "title": "Atividades dos usuários em tempo real",
+        "title": "Atividade dos utilizadores em tempo real",
         "table": {
-            "userlogin": "Usuário",
+            "userlogin": "Utilizador",
             "ipaddress": "IP",
             "userAgent": "Agente",
-            "page": "Página atual",
+            "page": "Página actual",
             "time": "Tempo"
         }
     }

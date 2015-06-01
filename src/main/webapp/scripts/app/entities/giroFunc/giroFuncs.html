@@ -58,7 +58,7 @@
                         <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
                     </div>
                     <div class="modal-body">
-                        <p translate="girosApp.giroFunc.delete.question" translate-values="{id: '{{giroFunc.id}}'}">Are you sure you want to delete this GiroFunc?</p>
+                        <p translate="girosApp.giroFunc.delete.question" translate-values="{value: '{{giroFunc.id}}'}">Are you sure you want to delete this GiroFunc?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
@@ -92,17 +92,17 @@
                         <button type="submit"
                                 ui-sref="giroFuncDetail({id:giroFunc.id})"
                                 class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
                         </button>
                         <button type="submit"
                                 ng-click="update(giroFunc.id)"
                                 class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                         <button type="submit"
                                 ng-click="delete(giroFunc.id)"
                                 class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
                         </button>
                     </td>
                 </tr>

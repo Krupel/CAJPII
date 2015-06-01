@@ -1,6 +1,9 @@
 
 <div>
-    <h2><span translate="girosApp.utente.detail.title">Utente</span> {{utente.id}}</h2>
+    <h2><span translate="girosApp.utente.detail.title">Utente</span> <span class="label label-default">{{utente.nome}}</span></h2>
+    <small><span translate="girosApp.utente.id">Identificador</span> <span class="badge">{{utente.id}}</span></small>
+    <br><br>
+
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -23,7 +26,7 @@
                         <span translate="girosApp.utente.datanascimento">Datanascimento</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.datanascimento}}" readonly>
+                        <input type="text" class="input-sm form-control" value="{{utente.datanascimento | date:'yyyy-MM-dd' }}" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +42,7 @@
                         <span translate="girosApp.utente.validadebi">Validadebi</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.validadebi}}" readonly>
+                        <input type="text" class="input-sm form-control" value="{{utente.validadebi | date:'yyyy-MM-dd' }}" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +50,8 @@
                         <span translate="girosApp.utente.sexo">Sexo</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.sexo}}" readonly>
+                        <input ng-if="utente.sexo === 'm'" type="text" class="input-sm form-control" value="Masculino" readonly>
+                        <input ng-if="utente.sexo === 'f'" type="text" class="input-sm form-control" value="Feminino" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +75,7 @@
                         <span translate="girosApp.utente.dataregisto">Dataregisto</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.dataregisto}}" readonly>
+                        <input type="text" class="input-sm form-control" value="{{utente.dataregisto | date:'yyyy-MM-dd' }}" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -84,18 +88,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <span translate="girosApp.utente.activo">Activo</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.activo}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <span translate="girosApp.utente.tipologiaAmigos">tipologiaAmigos</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{utente.tipologiaAmigos.id}}" readonly>
+                        <input type="text" class="input-sm form-control" value="{{utente.tipologiaAmigos.id}} - {{utente.tipologiaAmigos.descricao}}" readonly>
                     </td>
                 </tr>
             </tbody>

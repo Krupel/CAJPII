@@ -3,15 +3,16 @@
         "tipologia" : {
             "home": {
                 "title": "Tipologias",
-                "createLabel": "Criar nova Tipologia",
-                "createOrEditLabel": "Criar ou editar uma Tipologia"
+                "createLabel": "Criar Tipologia",
+                "createOrEditLabel": "Criar ou editar Tipologia"
             },
             "delete": {
-                "question": "Tem a certeza que pretende apagar a Tipologia {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar a Tipologia \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Tipologia"
             },
+            "id": "Identificador",
             "descricao": "Descrição"
         }
     }
