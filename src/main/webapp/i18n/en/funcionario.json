@@ -7,14 +7,15 @@
                 "createOrEditLabel": "Create or edit a Funcionario"
             },
             "delete": {
-                "question": "Are you sure you want to delete Funcionario {{ id }}?"
+                "question": "Are you sure you want to delete Funcionario \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Funcionario"
             },
-            "bi": "Bi",
-            "nome": "Nome",
-            "telefone": "Telefone",
+            "id": "ID",
+            "bi": "Personal Id",
+            "nome": "Name",
+            "telefone": "Phone",
             "email": "Email"
         }
     }

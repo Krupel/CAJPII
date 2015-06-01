@@ -1,6 +1,6 @@
 <div ng-cloak>
 
-    <h1>Giro</h1>
+    <h1 translate="girosApp.giroCab.home.title">Giro</h1>
     <br>
     <div class="row">
         <div class="col-xs-2">
@@ -25,15 +25,15 @@
         <table id="tecnicoTable"class="table table-striped">
             <thead>
             <tr>
-                <th>Identificador</th>
-                <th translate="girosApp.tecnico.nome">Nome</th>
-                <th class="text-center" translate="girosApp.tecnico.check">Selecionado</th>
+                <th translate="girosApp.giroCab.id">Identificador</th>
+                <th translate="girosApp.giroCab.nome">Nome</th>
+                <th class="text-center" translate="girosApp.giroCab.check">Selecionado</th>
                 <th></th>
             </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
             <tr ng-repeat="tecnico in tecnicos">
-                <td><a ui-sref="tecnicoDetail({id:tecnico.id})">{{tecnico.id}}</a></td>
+                <td>{{tecnico.id}}</td>
                 <td>{{tecnico.nome}}</td>
                 <td class="text-center"><input type="checkbox" ng-model="tecnico.checked"></td>
             </tr>
@@ -43,10 +43,10 @@
 
     <div class="text-right">
         <button ng-click="saveGiro()" class="btn btn-success btn-lg">
-            Guardar
+            <span translate="entity.action.save">Guardar</span>
         </button>
         <a ui-sref="home" class="btn btn-default btn-lg">
-            Cancelar
+            <span translate="entity.action.cancel">Cancelar</span>
         </a>
     </div>
 </div>

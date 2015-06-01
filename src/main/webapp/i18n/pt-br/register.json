@@ -1,23 +1,23 @@
 {
     "register": {
-        "title": "Cadastro",
+        "title": "Registo",
         "form": {
-            "button": "Cadastre"
+            "button": "Registar"
         },
         "messages": {
             "validate": {
                 "login": {
-                    "required": "O usuário é obrigatório.",
-                    "minlength": "O usuário deve ter pelo menos 1 caractere",
-                    "maxlength": "O usuário não pode ter mais de 50 caracteres",
-                    "pattern": "Your login can only contain lower-case letters and digits"
+                    "required": "O nome de utilizador é obrigatório.",
+                    "minlength": "O nome de utilizador deve ter pelo menos 1 caractere",
+                    "maxlength": "O nome de utilizador não pode ter mais de 50 caracteres",
+                    "pattern": "O seu nome de utilizador apenas pode conter letras minúsculas ou maiúsculas e dígitos"
                 }
             },
-            "success": "<strong>Cadstro salvo com sucesso!</strong> Favor verificar seu e-mail para confirmar a conta.",
+            "success": "<strong>Registo salvo com sucesso!</strong> Por favor, verifique o seu e-mail para confirmar a conta.",
             "error": {
-                "fail": "<strong>Erro ao realizar o cadastro!</strong> Favor tentar novamente mais tarde.",
-                "userexists": "<strong>Usuário já registrado!</strong> Favor escolher outro.",
-                "emailexists": "<strong>E-mail já está em uso!</strong> Por favor informe outro."
+                "fail": "<strong>Erro ao realizar o registo!</strong> Favor tentar novamente mais tarde.",
+                "userexists": "<strong>Nome de utilizador já em uso!</strong> Por favor, escolha outro.",
+                "emailexists": "<strong>E-mail já está em uso!</strong> Por favor, indique outro."
             }
         }
     }

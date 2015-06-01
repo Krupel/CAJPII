@@ -3,8 +3,8 @@
         "title": "Autenticação",
         "form": {
             "password": "Senha",
-            "password.placeholder": "Sua senha",
-            "rememberme": "Manter-me logado",
+            "password.placeholder": "A sua senha",
+            "rememberme": "Manter sessão ativa",
             "button": "Entrar"
         },
         "messages": {

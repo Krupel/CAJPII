@@ -1,8 +1,8 @@
 {
     "metrics": {
         "title": "Métricas da aplicação",
-        "refresh.button": "Atualizar",
-        "updating": "Atualização...",
+        "refresh.button": "Actualizar",
+        "updating": "Actualização...",
         "jvm": {
             "title": "Métricas da JVM",
             "memory": {

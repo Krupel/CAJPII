@@ -7,11 +7,12 @@
                 "createOrEditLabel": "Create or edit a GiroFunc"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroFunc {{ id }}?"
+                "question": "Are you sure you want to delete GiroFunc \"{{ value }}\"?"
             },
             "detail": {
                 "title": "GiroFunc"
             },
+            "id": "ID",
             "Tecnico": "Tecnico",
             "GiroCab": "GiroCab"
         }

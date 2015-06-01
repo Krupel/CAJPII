@@ -1,24 +1,25 @@
 {
     "global": {
-        "title": "Giros",
+        "title": "Intervenção direta \"Mão amiga\"",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
             "entities": {
                 "main": "Entities",
-                "tipologia": "Tipologia",
+                "tipologia": "Tipology",
                 "funcionario": "Funcionario",
                 "amigos": "Amigos",
                 "girosFunc": "GirosFunc",
                 "girosLin": "GirosLin",
                 "girosCab": "GirosCab",
                 "additionalEntity": "CAJP will add addtional entities",
-                "utente": "Utente",
+                "utente": "Patient",
                 "historicoUtente": "HistoricoUtente",
-                "giroFunc": "GiroFunc",
-                "giroLin": "GiroLin",
-                "giroCab": "GiroCab",
-                "tecnico": "Tecnico"
+                "giroFunc": "Giro - Technicians",
+                "giroLin": "Giro - Lines",
+                "giroCab": "List of Giros",
+                "giro": "Giro",
+                "tecnico": "Technician"
             },
             "account": {
                 "main": "Account",
@@ -97,7 +98,8 @@
             "delete": "Delete",
             "edit": "Edit",
             "save": "Save",
-            "view": "View"
+            "view": "View",
+            "clean": "Clean"
         },
         "detail": {
             "field": "Field",
@@ -117,5 +119,6 @@
             "datetimelocal": "This field should be a date and time."
         }
     },
-    "footer": "Centro de Acolhimento João Paulo II"
+    "footer": "",
+    "developedby": "Developed by"
 }

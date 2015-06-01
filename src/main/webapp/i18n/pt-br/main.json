@@ -1,14 +1,14 @@
 {
     "main": {
-        "title": "Bem vindo, CAJP!",
-        "subtitle": "Mão amiga",
+        "title": "Bem-vindo",
+        "subtitle": "Plataforma dedicada ao Centro de Acolhimento João Paulo II.",
         "logged": {
-            "message": "Você está logado como \"{{username}}\"."
+            "message": "O utilizador encontra-se ligado como \"{{username}}\"."
         },
         "question": "Em caso de dúvida:",
         "link": {
-            "homepage": "CAJP homepage",
-            "contact": " + 351 239 718 001"
+            "homepage": "Página oficial",
+            "contact": "Contacto"
         }
     }
 }

@@ -1,19 +1,19 @@
 {
     "settings": {
-        "title": "Configurações para o usuário [<b>{{username}}</b>]",
+        "title": "Configurações para o utilizador [<b>{{username}}</b>]",
         "form": {
             "firstname": "Primeiro nome",
             "firstname.placeholder": "Seu primeiro nome",
             "lastname": "Sobrenome",
             "lastname.placeholder": "Seu sobrenome",
-            "button": "Salvar"
+            "button": "Guardar"
         },
         "messages": {
             "error": {
-                "fail": "<strong>Ocorreu um erro!</strong> As configurações não foram salvas.",
-                "emailexists": "<strong>E-mail is already in use!</strong> Please choose another one."
+                "fail": "<strong>Ocorreu um erro!</strong> As configurações não foram guardadas.",
+                "emailexists": "<strong>O e-mail já se encontra em uso!</strong> Por favor indique outro."
             },
-            "success": "<strong>Configurações salvas com sucesso!</strong>",
+            "success": "<strong>Configurações guardadas com sucesso!</strong>",
             "validate": {
                 "firstname": {
                     "required": "O primeiro nome é obrigatório.",

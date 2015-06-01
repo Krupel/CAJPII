@@ -5,9 +5,10 @@ angular.module('girosApp')
         $stateProvider
             .state('giro', {
                 parent: 'site',
-                url: '/',
+                url: '/giro',
                 data: {
-                    roles: []
+                    roles: ['ROLE_USER'],
+                    pageTitle: 'girosApp.giroCab.home.title'
                 },
                 views: {
                     'content@': {

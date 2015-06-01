@@ -1,6 +1,8 @@
 
 <div>
-    <h2><span translate="girosApp.giroCab.detail.title">GiroCab</span> {{giroCab.id}}</h2>
+    <h2><span translate="girosApp.giroCab.detail.title">Giro</span> <span class="label label-default">{{giroCab.id}}</span></h2>
+    <br><br>
+
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -15,7 +17,7 @@
                         <span translate="girosApp.giroCab.data">Data</span>
                     </td>
                     <td>
-                        <input type="text" class="input-sm form-control" value="{{giroCab.data}}" readonly>
+                        <input type="text" class="input-sm form-control" value="{{giroCab.data | date:'yyyy-MM-dd'}}" readonly>
                     </td>
                 </tr>
                 <tr>

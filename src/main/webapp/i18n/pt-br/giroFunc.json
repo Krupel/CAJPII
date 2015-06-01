@@ -3,16 +3,17 @@
         "giroFunc" : {
             "home": {
                 "title": "GiroFuncs",
-                "createLabel": "Create a new GiroFunc",
-                "createOrEditLabel": "Create or edit a GiroFunc"
+                "createLabel": "Criar GiroFunc",
+                "createOrEditLabel": "Criar ou editar GiroFunc"
             },
             "delete": {
-                "question": "Are you sure you want to delete GiroFunc {{ id }}?"
+                "question": "Tem a certeza que pretende eliminar o GiroFunc {{ id }}?"
             },
             "detail": {
                 "title": "GiroFunc"
             },
-            "Tecnico": "Tecnico",
+            "id": "Identificador",
+            "Tecnico": "Técnico",
             "GiroCab": "GiroCab"
         }
     }

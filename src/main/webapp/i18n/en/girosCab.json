@@ -7,13 +7,14 @@
                 "createOrEditLabel": "Create or edit a GirosCab"
             },
             "delete": {
-                "question": "Are you sure you want to delete GirosCab {{ id }}?"
+                "question": "Are you sure you want to delete GirosCab \"{{ value }}\"?"
             },
             "detail": {
                 "title": "GirosCab"
             },
-            "data": "Data",
-            "observacoes": "Observacoes"
+            "id": "ID",
+            "data": "Date",
+            "observacoes": "Comments"
         }
     }
 }

@@ -4,17 +4,17 @@
         "refresh.button": "Atualizar",
         "stacktrace": "Stacktrace",
         "indicator": {
-            "diskSpace": "Disk space",
+            "diskSpace": "Espaço em disco",
             "mail": "Email",
-            "db": "Banco de dados"
+            "db": "Base de dados"
         },
         "table": {
             "service": "Nome do Serviço",
             "status": "Estado"
         },
         "status": {
-            "UP": "UP",
-            "DOWN": "DOWN"
+            "UP": "Operacional",
+            "DOWN": "Em baixo"
         }
     }
 }

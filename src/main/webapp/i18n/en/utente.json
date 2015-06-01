@@ -7,23 +7,24 @@
                 "createOrEditLabel": "Create or edit a Utente"
             },
             "delete": {
-                "question": "Are you sure you want to delete Utente {{ id }}?"
+                "question": "Are you sure you want to delete Utente \"{{ value }}\"?"
             },
             "detail": {
                 "title": "Utente"
             },
-            "nome": "Nome",
-            "datanascimento": "Datanascimento",
-            "bi": "Bi",
-            "validadebi": "Validadebi",
-            "sexo": "Sexo",
-            "niss": "Niss",
-            "nacionalidade": "Nacionalidade",
-            "dataregisto": "Dataregisto",
-            "caracteristicas": "Caracteristicas",
-            "activo": "Activo",
-            "tipologiaAmigos": "tipologiaAmigos",
-            "tipologia": "tipologia"
+            "id": "ID",
+            "nome": "Name",
+            "datanascimento": "Birthday",
+            "bi": "Personal Id",
+            "validadebi": "Id Date limit",
+            "sexo": "Gender",
+            "niss": "Health Id",
+            "nacionalidade": "Nationality",
+            "dataregisto": "Record date",
+            "caracteristicas": "Appearance",
+            "activo": "Active",
+            "tipologiaAmigos": "Typology",
+            "tipologia": "Typology"
         }
     }
 }

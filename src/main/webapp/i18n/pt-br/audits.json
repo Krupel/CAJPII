@@ -7,14 +7,14 @@
             "to": "até",
             "button": {
                 "weeks": "Semanas",
-                "today": "hoje",
-                "clear": "limpar",
-                "close": "fechar"
+                "today": "Hoje",
+                "clear": "Limpar",
+                "close": "Fechar"
             }
         },
         "table": {
             "header": {
-                "principal": "Usuário",
+                "principal": "Utilizador",
                 "date": "Data",
                 "status": "Estado",
                 "data": "Informações extras"
