@@ -16,8 +16,7 @@
             "nome": "Nome",
             "bi": "BI/CC",
             "telefone": "Telefone",
-            "email": "Email",
-            "check": "Selecionado"
+            "email": "Email"
         }
     }
 }

@@ -16,8 +16,7 @@
             "nome": "Name",
             "bi": "Personal ID",
             "telefone": "Phone",
-            "email": "Email",
-            "check": "Selected"
+            "email": "Email"
         }
     }
 }

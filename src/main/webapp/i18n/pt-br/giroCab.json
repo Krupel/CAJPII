@@ -14,7 +14,8 @@
             },
             "id": "Identificador",
             "data": "Data",
-            "observacoes": "Observações"
+            "observacoes": "Observações",
+            "check": "Selecionado"
         }
     }
 }

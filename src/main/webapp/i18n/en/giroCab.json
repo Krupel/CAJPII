@@ -14,7 +14,8 @@
             },
             "id": "ID",
             "data": "Date",
-            "observacoes": "Text"
+            "observacoes": "Text",
+            "check": "Selected"
         }
     }
 }
