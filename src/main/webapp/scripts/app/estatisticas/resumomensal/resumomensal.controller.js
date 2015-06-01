@@ -13,13 +13,7 @@ angular.module('girosApp')
         $scope.year = 1900;
 
         $scope.listResumo = [];
-        $scope.listNacionalidade = [];
-        $scope.listIdades = [0, 0, 0, 0, 0];
-        $scope.sTecto=0;
-        $scope.sCasa=0;
-        $scope.gRisco=0;
-        $scope.sf=0;
-        $scope.sm=0;
+
 
         $scope.rebuildResumo = function(){
             var tempResumo =
@@ -29,6 +23,8 @@ angular.module('girosApp')
                 dtNasc:"",
                 st:"",sc:"",gr:"",
                 s1:"",s2:"",s3:"",s4:"",s5:"",
+                sexo:"",
+                nacionalidade:"",
                 obs:[
                     {
                         obsl:""
@@ -37,6 +33,7 @@ angular.module('girosApp')
             };
             var existe= false;
 
+            $scope.listResumo = [];
 
             for (var i = 0; i < $scope.resumo.length; i++) {
                 if(i===0){
@@ -49,6 +46,9 @@ angular.module('girosApp')
                         tempResumo.sc = "X";
                     if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
                         tempResumo.gr = "X";
+
+                    tempResumo.sexo = $scope.resumo[i].utente.sexo;
+                    tempResumo.nacionalidade =$scope.resumo[i].utente.nacionalidade;
 
                     if(new Date($scope.resumo[i].giroCab.data) >= $scope.weeks[0].firstDate && new Date($scope.resumo[i].giroCab.data) < $scope.weeks[0].endDate){
                         tempResumo.s1 = "X";
@@ -84,6 +84,9 @@ angular.module('girosApp')
                             if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
                                 $scope.listResumo[m].gr = "X";
 
+                            $scope.listResumo[m].sexo = $scope.resumo[i].utente.sexo;
+                            $scope.listResumo[m].nacionalidade =$scope.resumo[i].utente.nacionalidade;
+
                             if(new Date($scope.resumo[i].giroCab.data) >= $scope.weeks[0].firstDate && new Date($scope.resumo[i].giroCab.data) < $scope.weeks[0].endDate){
                                 $scope.listResumo[m].s1 = "X";
                             }
@@ -113,6 +116,8 @@ angular.module('girosApp')
                             dtNasc:"",
                             st:"",sc:"",gr:"",
                             s1:"",s2:"",s3:"",s4:"",s5:"",
+                            sexo:"",
+                            nacionalidade:"",
                             obs:[
                                 {
                                     obsl:""
@@ -128,6 +133,9 @@ angular.module('girosApp')
                             tempResumo.sc = "X";
                         if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
                             tempResumo.gr = "X";
+
+                        tempResumo.sexo = $scope.resumo[i].utente.sexo;
+                        tempResumo.nacionalidade =$scope.resumo[i].utente.nacionalidade;
 
                         if(new Date($scope.resumo[i].giroCab.data) >= $scope.weeks[0].firstDate && new Date($scope.resumo[i].giroCab.data) < $scope.weeks[0].endDate){
                             tempResumo.s1 = "X";
@@ -172,7 +180,6 @@ angular.module('girosApp')
             }
 
             $scope.rebuildResumo();
-
             $scope.estats();
         };
 
@@ -185,6 +192,14 @@ angular.module('girosApp')
             //$scope.listResumo -> lista resumo
             //$scope.resumo.length -> lista completa
 
+            $scope.listNacionalidade = [];
+            $scope.listIdades = [0, 0, 0, 0, 0];
+            $scope.sTecto=0;
+            $scope.sCasa=0;
+            $scope.gRisco=0;
+            $scope.sf=0;
+            $scope.sm=0;
+
             var existe=false;
             var iidade;
             var nac =
@@ -194,11 +209,11 @@ angular.module('girosApp')
             };
 
             for (var i = 0; i < $scope.listResumo.length; i++) {
-                if($scope.listResumo[i].tipo === 1)
+                if($scope.listResumo[i].st === "X")
                     $scope.sTecto=$scope.sTecto+1;
-                if($scope.listResumo[i].tipo === 2)
+                if($scope.listResumo[i].sc === "X")
                     $scope.sCasa=$scope.sCasa+1;
-                if($scope.listResumo[i].tipo === 3)
+                if($scope.listResumo[i].gr === "X")
                     $scope.gRisco=$scope.gRisco+1;
 
                 if($scope.listResumo[i].sexo === "f")
@@ -261,28 +276,46 @@ angular.module('girosApp')
         };
 
         $scope.pesquisar = function(month,year){
-            $scope.listResumo = [];
-            GiroLin.query({page: $scope.page, per_page: 20}, function(result, headers) {
-                $scope.links = ParseLinks.parse(headers('link'));
-                for (var i = 0; i < result.length; i++) {
-                    $scope.resumo.push(result[i]);
-                }
-            });
+            var numDays =$scope.daysInMonth(month,year);
+            var dateini= new Date(year,month-1,1);
+            var dateend= new Date(year,month-1,numDays);
 
-            $scope.fillWeeks(month,year);
+            $http({
+                method:'GET',
+                url:'api/resumobydatas',
+                params: {date_de:$scope.formatDate(dateini),date_ate:$scope.formatDate(dateend)}
+            }).
+                success(function(data){
+                    $scope.resumo =[];
+                    for (var i = 0; i < data.length; i++) {
+                        $scope.resumo.push(angular.fromJson(data[i]));
+                    }
+
+                    $scope.fillWeeks(month,year);
+                    $scope.rebuildResumo();
+                });
         };
 
         $scope.formatDate = function(date) {
+
             var d = new Date(date),
                 month = '' + (d.getMonth() + 1),
-                day = '' + d.getDate(),
+                day = '' + date.getDate(),
                 year = d.getFullYear();
+
 
             if (month.length < 2) month = '0' + month;
             if (day.length < 2) day = '0' + day;
 
             return [year, month, day].join('-');
-        }
+        };
+
+        $scope.export = function(month,year){
+            var blob = new Blob([document.getElementById('exportable').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "ResumoMensal_"+month+year+".xls");
+        };
 
     });
 

@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.cajp.giros.domain.GiroLin;
 import com.cajp.giros.repository.GiroLinRepository;
 import com.cajp.giros.web.rest.util.PaginationUtil;
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -96,12 +97,13 @@ public class GiroLinResource {
     public ResponseEntity<List<GiroLin>> getResumo(
         @RequestParam(value = "page", required = false) Integer offset,
         @RequestParam(value = "per_page", required = false) Integer limit,
-        @RequestParam(value = "date_de", required = false) Date date_de,
-        @RequestParam(value = "date_ate", required = false) Date date_ate)
+        @RequestParam(value = "date_de", required = false) String date_de,
+        @RequestParam(value = "date_ate", required = false) String date_ate)
         throws URISyntaxException, ParseException {
         Pageable r = PaginationUtil.generatePageRequest(offset, limit);
-
-        Page<GiroLin> page = giroLinRepository.findResumo(date_de,date_ate,r);
+        LocalDate mydate_de = new LocalDate(date_de);
+        LocalDate mydate_ate = new LocalDate(date_ate);
+        Page<GiroLin> page = giroLinRepository.findResumo(mydate_de,mydate_ate,r);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/giroLins", offset, limit);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

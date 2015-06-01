@@ -4,7 +4,10 @@
     <input ng-model="month">
     <input ng-model="year">
     <button ng-click="pesquisar(month,year)"></button>
+    <button ng-click="export(month,year)"></button>
 
+
+    <div id="exportable">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -38,6 +41,8 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    </div>
         <table>
             <tr>
                 <td>
@@ -100,7 +105,19 @@
                 </td>
                 <td>{{gRisco}}</td>
             </tr>
+
+            <tr>
+                <td>
+                    sexo F
+                </td>
+                <td>{{sf}}</td>
+                <td>
+                    sexo M
+                </td>
+                <td>{{sm}}</td>
+
+            </tr>
         </table>
-    </div>
+
 </div>
 
