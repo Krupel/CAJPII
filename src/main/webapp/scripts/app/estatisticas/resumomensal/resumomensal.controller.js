@@ -9,8 +9,10 @@ angular.module('girosApp')
 
         $scope.resumo=[];
         $scope.weeks =[];
-        $scope.month = 0;
-        $scope.year = 1900;
+
+        var today = new Date();
+        $scope.month = today.getMonth()+1;
+        $scope.year = today.getFullYear();
 
         $scope.listResumo = [];
 
