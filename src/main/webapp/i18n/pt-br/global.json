@@ -64,7 +64,7 @@
         },
         "messages": {
             "info": {
-                "authenticated": "Para <a href=\"#/login\">entrar</a>, utilize as seguintes contas padrões:<br/>- Administrador (usuário=\"admin\" and senha=\"admin\") <br/>- Usuário (usuário=\"user\" and senha=\"user\").",
+                "authenticated": "Para <a href=\"#/login\">entrar</a>, utilize as seguintes contas padrões:<br/>- Administrador (utilizador=\"admin\" e senha=\"admin\") <br/>- Utilizador (utilizador=\"user\" e senha=\"user\").",
                 "register": "Não possui uma conta ainda? <a href=\"#/register\">Crie uma nova conta</a>"
             },
             "error": {
