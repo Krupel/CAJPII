@@ -153,6 +153,7 @@ module.exports = function (grunt) {
                         '<%= yeoman.dist %>/scripts/**/*.js',
                         '<%= yeoman.dist %>/assets/styles/**/*.css',
                         '<%= yeoman.dist %>/assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+                        '<%= yeoman.dist %>/assets/files/*',
                         '<%= yeoman.dist %>/assets/fonts/*'
                     ]
                 }
@@ -178,7 +179,7 @@ module.exports = function (grunt) {
             css: ['<%= yeoman.dist %>/assets/styles/**/*.css'],
             js: ['<%= yeoman.dist %>/scripts/**/*.js'],
             options: {
-                assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/assets/styles', '<%= yeoman.dist %>/assets/images', '<%= yeoman.dist %>/assets/fonts'],
+                assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/assets/styles', '<%= yeoman.dist %>/assets/images', '<%= yeoman.dist %>/assets/files', '<%= yeoman.dist %>/assets/fonts'],
                 patterns: {
                     js: [
                         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
@@ -269,6 +270,12 @@ module.exports = function (grunt) {
         },
         // Put files not handled in other tasks here
         copy: {
+            options: {
+              // exclude binary format from the processContent function
+              processContentExclude: [
+                '**/*.{png,gif,jpg,ico,psd,ttf,otf,woff,woff2,svg}'
+              ]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -279,6 +286,7 @@ module.exports = function (grunt) {
                         '*.html',
                         'scripts/**/*.html',
                         'assets/images/**/*.{png,gif,webp,jpg,jpeg,svg}',
+                        'assets/files/*',
                         'assets/fonts/*'
                     ]
                 }, {

@@ -9,15 +9,15 @@
         <strong>Colunas visíveis:</strong>
         <ul class="nav nav-pills nav-columns">
             <li class="text-primary"><input type="checkbox" ng-model="colIDVisible"> ID</li>
-            <li class="text-primary"><input type="checkbox" ng-model="colNomeVisible"> <span translate="girosApp.utente.nome"> Nome</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colDataNascimentoVisible"> <span translate="girosApp.utente.datanascimento"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colBIVisible"> <span translate="girosApp.utente.bi"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colValidadeBIVisible"> <span translate="girosApp.utente.validadebi"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colSexoVisible"> <span translate="girosApp.utente.sexo"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colNISSVisible"> <span translate="girosApp.utente.niss"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colDataRegistoVisible"> <span translate="girosApp.utente.dataregisto"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colCaracteristicasVisible"> <span translate="girosApp.utente.caracteristicas"> Column</span></li>
-            <li class="text-primary"><input type="checkbox" ng-model="colTipologiaVisible"> <span translate="girosApp.utente.tipologiaAmigos"> Column</span></li>
+            <li class="text-primary"><input type="checkbox" ng-model="colNomeVisible"> Nome</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colDataNascimentoVisible"> Data de Nascimento</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colBIVisible"> BI/CC/Passaporte</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colValidadeBIVisible"> Validade BI/...</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colSexoVisible"> Sexo</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colNISSVisible"> NISS</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colDataRegistoVisible"> Data Registo</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colCaracteristicasVisible"> Características</li>
+            <li class="text-primary"><input type="checkbox" ng-model="colTipologiaVisible"> Tipologia</li>
         </ul>
     </div>
 
@@ -211,16 +211,16 @@
             <thead>
                 <tr>
                     <th ng-show="colIDVisible">ID</th>
-                    <th ng-show="colNomeVisible" translate="girosApp.utente.nome">Nome</th>
-                    <th ng-show="colDataNascimentoVisible" translate="girosApp.utente.datanascimento">DataNascimento</th>
-                    <th ng-show="colBIVisible" translate="girosApp.utente.bi">BI/CC</th>
-                    <th ng-show="colValidadeBIVisible" translate="girosApp.utente.validadebi">NISS</th>
-                    <th ng-show="colNISSVisible" translate="girosApp.utente.niss">NISS</th>
-                    <th ng-show="colSexoVisible" translate="girosApp.utente.sexo">Sexo</th>
-                    <th ng-show="colNacionalidadeVisible" translate="girosApp.utente.nacionalidade">Nacionalidade</th>
-                    <th ng-show="colDataRegistoVisible" translate="girosApp.utente.dataregisto">NISS</th>
-                    <th ng-show="colCaracteristicasVisible" translate="girosApp.utente.caracteristicas">Características</th>
-                    <th ng-show="colTipologiaVisible" translate="girosApp.utente.tipologia">Tipologia</th>
+                    <th ng-show="colNomeVisible">Nome</th>
+                    <th ng-show="colDataNascimentoVisible">Data de Nascimento</th>
+                    <th ng-show="colBIVisible">BI/CC/Passaporte</th>
+                    <th ng-show="colValidadeBIVisible">Validade BI/...</th>
+                    <th ng-show="colNISSVisible">NISS</th>
+                    <th ng-show="colSexoVisible">Sexo</th>
+                    <th ng-show="colNacionalidadeVisible">Nacionalidade</th>
+                    <th ng-show="colDataRegistoVisible">NISS</th>
+                    <th ng-show="colCaracteristicasVisible">Características</th>
+                    <th ng-show="colTipologiaVisible">Tipologia</th>
                     <th></th>
                 </tr>
             </thead>
