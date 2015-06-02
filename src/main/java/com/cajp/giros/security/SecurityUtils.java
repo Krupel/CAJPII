@@ -54,6 +54,15 @@ public final class SecurityUtils {
         return true;
     }
 
+    /**
+     * Check if a user is anonymous.
+     *
+     * @return true if the user is anonymous, false otherwise
+     */
+    public static boolean isAnonymous() {
+        return !isAuthenticated();
+    }
+
 
     /**
      * If the current user has a specific security role.
