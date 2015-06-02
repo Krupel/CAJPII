@@ -56,7 +56,7 @@ angular.module('girosApp')
         };
 
         $scope.clear = function () {
-            $scope.giroCab = {data: null, observacoes: null, id: null};
+            $scope.giroCab = {data: new Date(), observacoes: null, id: null};
             $scope.editForm.$setPristine();
             $scope.editForm.$setUntouched();
         };

@@ -130,7 +130,7 @@ angular.module('girosApp')
         };
 
         $scope.clear = function () {
-            $scope.utente = {nome: null, datanascimento: null, bi: null, validadebi: null, sexo: null, niss: null, nacionalidade: null, dataregisto: null, caracteristicas: null, activo: null, id: null};
+            $scope.utente = {nome: null, datanascimento: new Date(), bi: null, validadebi: new Date(), sexo: null, niss: null, nacionalidade: null, dataregisto: new Date(), caracteristicas: null, activo: null, id: null};
             $scope.editForm.$setPristine();
             $scope.editForm.$setUntouched();
         };
