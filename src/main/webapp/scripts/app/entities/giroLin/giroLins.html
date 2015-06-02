@@ -26,13 +26,13 @@
 
                         <div class="form-group">
                             <label>Giro</label>
-                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
+                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs" required>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>Utente</label>
-                            <select class="form-control" name="Utente" ng-model="giroLin.utente.id" ng-options="utente.id as utente.nome for utente in utentes">
+                            <select class="form-control" name="Utente" ng-model="giroLin.utente.id" ng-options="utente.id as utente.nome for utente in utentes" required>
                             </select>
                         </div>
 

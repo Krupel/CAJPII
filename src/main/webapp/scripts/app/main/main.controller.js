@@ -5,5 +5,6 @@ angular.module('girosApp')
         Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
+            $scope.isAnonymous = Principal.isAnonymous;
         });
     });
