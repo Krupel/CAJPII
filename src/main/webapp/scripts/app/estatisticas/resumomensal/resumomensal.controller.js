@@ -16,6 +16,8 @@ angular.module('girosApp')
 
         $scope.listResumo = [];
 
+        var SemTectoID = 1077, SemCasaID = 1078, GrupoDeRiscoID = 1087;
+
 
         $scope.rebuildResumo = function(){
             var tempResumo =
@@ -42,11 +44,11 @@ angular.module('girosApp')
                     tempResumo.id = $scope.resumo[i].utente.id;
                     tempResumo.name = $scope.resumo[i].utente.nome;
                     tempResumo.dtNasc = $scope.resumo[i].utente.datanascimento;
-                    if($scope.resumo[i].utente.tipologiaAmigos.id === 1)
+                    if($scope.resumo[i].utente.tipologiaAmigos.id === SemTectoID)
                       tempResumo.st = "X";
-                    if($scope.resumo[i].utente.tipologiaAmigos.id === 2)
+                    if($scope.resumo[i].utente.tipologiaAmigos.id === SemCasaID)
                         tempResumo.sc = "X";
-                    if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
+                    if($scope.resumo[i].utente.tipologiaAmigos.id === GrupoDeRiscoID)
                         tempResumo.gr = "X";
 
                     tempResumo.sexo = $scope.resumo[i].utente.sexo;
@@ -79,11 +81,11 @@ angular.module('girosApp')
                         if($scope.listResumo[m].id===$scope.resumo[i].utente.id){
                             existe=true;
 
-                            if($scope.resumo[i].utente.tipologiaAmigos.id === 1)
+                            if($scope.resumo[i].utente.tipologiaAmigos.id === SemTectoID)
                                 $scope.listResumo[m].st = "X";
-                            if($scope.resumo[i].utente.tipologiaAmigos.id === 2)
+                            if($scope.resumo[i].utente.tipologiaAmigos.id === SemCasaID)
                                 $scope.listResumo[m].sc = "X";
-                            if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
+                            if($scope.resumo[i].utente.tipologiaAmigos.id === GrupoDeRiscoID)
                                 $scope.listResumo[m].gr = "X";
 
                             $scope.listResumo[m].sexo = $scope.resumo[i].utente.sexo;
@@ -129,11 +131,11 @@ angular.module('girosApp')
                         tempResumo.id = $scope.resumo[i].utente.id;
                         tempResumo.name = $scope.resumo[i].utente.nome;
                         tempResumo.dtNasc = $scope.resumo[i].utente.datanascimento;
-                        if($scope.resumo[i].utente.tipologiaAmigos.id === 1)
+                        if($scope.resumo[i].utente.tipologiaAmigos.id === SemTectoID)
                             tempResumo.st = "X";
-                        if($scope.resumo[i].utente.tipologiaAmigos.id === 2)
+                        if($scope.resumo[i].utente.tipologiaAmigos.id === SemCasaID)
                             tempResumo.sc = "X";
-                        if($scope.resumo[i].utente.tipologiaAmigos.id === 3)
+                        if($scope.resumo[i].utente.tipologiaAmigos.id === GrupoDeRiscoID)
                             tempResumo.gr = "X";
 
                         tempResumo.sexo = $scope.resumo[i].utente.sexo;

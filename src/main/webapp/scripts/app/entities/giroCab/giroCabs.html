@@ -1,6 +1,10 @@
 <div>
-    <h2>Lista de Giros</h2>
-    <br>
+    <h1>Giro <small>Manutenção</small></h1>
+
+    <a class="btn btn-primary btn-lg" ui-sref="giro">
+        <span class="glyphicon glyphicon-flash"></span>&nbsp;Criar Giro
+    </a>
+    <br><br>
 
     <div class="modal fade" id="saveGiroCabModal" tabindex="-1" role="dialog" aria-labelledby="myGiroCabLabel"
          aria-hidden="true">
@@ -21,13 +25,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label translate="girosApp.giroCab.data">Data</label>
+                            <label>Data</label>
                             <input type="date" class="form-control" name="data"
                                    ng-model="giroCab.data">
 
                         </div>
                         <div class="form-group">
-                            <label translate="girosApp.giroCab.observacoes">Observacoes</label>
+                            <label>Observações</label>
                             <input type="text" class="form-control" name="observacoes"
                                    ng-model="giroCab.observacoes">
 
@@ -77,8 +81,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th translate="girosApp.giroCab.data">Data</th>
-                    <th translate="girosApp.giroCab.observacoes">Observacoes</th>
+                    <th>Data</th>
+                    <th>Observações</th>
                     <th></th>
                 </tr>
             </thead>

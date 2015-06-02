@@ -1,9 +1,11 @@
 <div>
-    <h1>Giro <small>Adicionar Utente</small></h1>
+    <h1>Giro <small>Utente</small></h1>
 
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveGiroLinModal" ng-click="clear()">
-        <span class="glyphicon glyphicon-flash"></span> <span translate="girosApp.giroLin.home.createLabel">Create a new GiroLin</span>
+        <span class="glyphicon glyphicon-flash"></span>&nbsp;Adicionar Utente
     </button>
+    <br><br>
+
     <div class="modal fade" id="saveGiroLinModal" tabindex="-1" role="dialog" aria-labelledby="myGiroLinLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -23,21 +25,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label translate="girosApp.giroLin.observacoes">Observacoes</label>
-                            <input type="text" class="form-control" name="observacoes"
-                                   ng-model="giroLin.observacoes">
-
+                            <label>Giro</label>
+                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label translate="girosApp.giroLin.Utente">Utente</label>
+                            <label>Utente</label>
                             <select class="form-control" name="Utente" ng-model="giroLin.utente.id" ng-options="utente.id as utente.nome for utente in utentes">
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label translate="girosApp.giroLin.GiroCab">GiroCab</label>
-                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
-                            </select>
+                            <label>Observações</label>
+                            <textarea type="text" class="form-control" name="observacoes"
+                                   ng-model="giroLin.observacoes" rows="3"></textarea>
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -82,19 +85,19 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th translate="girosApp.giroLin.observacoes">Observacoes</th>
-                    <th translate="girosApp.giroLin.Utente">Utente</th>
-                    <th translate="girosApp.giroLin.GiroCab">GiroCab</th>
+                    <th>Giro</th>
+                    <th>Registo</th>
+                    <th>Observações</th>
+                    <th>Utente</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="giroLin in giroLins">
+                    <td>{{giroLin.giroCab.data}}</td>
                     <td><a ui-sref="giroLinDetail({id:giroLin.id})">{{giroLin.id}}</a></td>
                     <td>{{giroLin.observacoes}}</td>
                     <td>{{giroLin.utente.nome}}</td>
-                    <td>{{giroLin.giroCab.data}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="giroLinDetail({id:giroLin.id})"

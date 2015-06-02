@@ -20,7 +20,7 @@
                 <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                         <span>
-                            <i class="fa fa-bar-chart"></i>
+                            <span class="glyphicon glyphicon-stats"></span>
                             <span class="hidden-tablet" translate="global.menu.estatisticas.main">
                                 estatisticas
                             </span>
@@ -28,38 +28,38 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ><a ui-sref="resumomensal"><i class="fa fa-pie-chart"></i>
+                        <li ui-sref-active="active" ><a ui-sref="resumomensal"><span class="glyphicon glyphicon-equalizer"></span>
                             &#xA0;<span translate="global.menu.estatisticas.resumomensal">resumo mensal</span></a></li>
                     </ul>
                 </li>
                 <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                         <span>
-                            <i class="fa fa-server"></i>
+                            <span class="glyphicon glyphicon-th-list"></span>
                             <span class="hidden-tablet" translate="global.menu.entities.main">
                                 Entities
                             </span>
                             <b class="caret"></b>
                         </span>
                     </a>
+
+                    <!-- Entidades -->
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="utente"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.utente">utente</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="tecnico"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.tecnico">tecnico</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="giro"><span class="glyphicon glyphicon-asterisk"></span>
-                            &#xA0;<span translate="global.menu.entities.giro">giro</span></a></li>
-
-                        <li ui-sref-active="active" role="presentation" class="divider"></li>
+                        &#xA0;Utentes</a></li>
                         <li ui-sref-active="active"><a ui-sref="giroCab"><span class="glyphicon glyphicon-asterisk"></span>
-                            &#xA0;<span translate="global.menu.entities.giroCab">giroCab</span></a></li>
+                            &#xA0;Giros</a></li>
+                        <li ui-sref-active="active"><a ui-sref="giroLin"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;Giro - Registar utente</a></li>
+
                         <!-- Admin -->
-                        <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroLin"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.giroLin">giroLin</span></a></li>
-                        <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroFunc"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.giroFunc">giroFunc</span></a></li>
+                        <li ui-sref-active="active" role="presentation" class="divider" ng-show="isInRole('ROLE_ADMIN')"></li>
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="tecnico"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;Técnicos</a></li>
                         <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="tipologia"><span class="glyphicon glyphicon-asterisk"></span>
-                            &#xA0;<span translate="global.menu.entities.tipologia">tipologia</span></a></li>
+                            &#xA0;Tipologias</a></li>
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')"><a ui-sref="giroFunc"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;Giros - Técnicos</a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>
