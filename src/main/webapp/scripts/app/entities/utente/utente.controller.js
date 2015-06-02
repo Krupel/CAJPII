@@ -10,6 +10,8 @@ angular.module('girosApp')
         $scope.pesqCaract = "";
         $scope.pesqTipologia = "";
 
+        //$scope.utente.datanascimento = new Date();
+
         $scope.colIDVisible = true;
         $scope.colNomeVisible = true;
         $scope.colDataNascimentoVisible = false;

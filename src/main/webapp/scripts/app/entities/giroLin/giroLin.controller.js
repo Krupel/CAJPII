@@ -3,9 +3,19 @@
 angular.module('girosApp')
     .controller('GiroLinController', function ($scope, GiroLin, Utente, GiroCab, ParseLinks) {
         $scope.giroLins = [];
-        $scope.utentes = Utente.query();
-        $scope.girocabs = GiroCab.query();
+        $scope.girocabs = [];
         $scope.page = 1;
+        $scope.utentes = Utente.query();
+
+        $scope.loadAllGiroCab = function() {
+            GiroCab.query({page: $scope.page, per_page: 20}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+                for (var i = result.length-1; i >= 0; i--) {
+                    $scope.girocabs.push(result[i]);
+                }
+            });
+        };
+
         $scope.loadAll = function() {
             GiroLin.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
@@ -14,6 +24,7 @@ angular.module('girosApp')
                 }
             });
         };
+
         $scope.reset = function() {
             $scope.page = 1;
             $scope.giroLins = [];
@@ -23,7 +34,9 @@ angular.module('girosApp')
             $scope.page = page;
             $scope.loadAll();
         };
+
         $scope.loadAll();
+        $scope.loadAllGiroCab();
 
         $scope.create = function () {
             GiroLin.update($scope.giroLin,

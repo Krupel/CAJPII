@@ -25,10 +25,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Observações</label>
-                            <input type="text" class="form-control" name="observacoes"
-                                   ng-model="giroLin.observacoes">
-
+                            <label>Giro</label>
+                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
+                            </select>
                         </div>
 
                         <div class="form-group">
@@ -36,10 +35,12 @@
                             <select class="form-control" name="Utente" ng-model="giroLin.utente.id" ng-options="utente.id as utente.nome for utente in utentes">
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label>Giro</label>
-                            <select class="form-control" name="GiroCab" ng-model="giroLin.giroCab.id" ng-options="giroCab.id as giroCab.data for giroCab in girocabs">
-                            </select>
+                            <label>Observações</label>
+                            <textarea type="text" class="form-control" name="observacoes"
+                                   ng-model="giroLin.observacoes" rows="3"></textarea>
+
                         </div>
                     </div>
                     <div class="modal-footer">
