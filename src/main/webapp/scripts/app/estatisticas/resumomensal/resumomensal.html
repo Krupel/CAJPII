@@ -1,123 +1,183 @@
 <div ng-cloak>
+    <h1>Resumo Mensal</h1>
+    <br>
 
-    Resumo mensal
-    <input ng-model="month">
-    <input ng-model="year">
-    <button ng-click="pesquisar(month,year)"></button>
-    <button ng-click="export(month,year)"></button>
-
+    <div class="row">
+        <div class="col-lg-2 form-group">
+            <label class="sr-only" for="mes">Mês</label>
+            <div class="input-group">
+                <div class="input-group-addon">Mês</div>
+                <input ng-model="month" type="number" class="form-control" id="mes" placeholder="{{month}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 form-group">
+            <label class="sr-only" for="ano">Ano</label>
+            <div class="input-group">
+                <div class="input-group-addon">Ano</div>
+                <input ng-model="year" type="number" class="form-control" id="ano" placeholder="{{year}}">
+            </div>
+        </div>
+        <button ng-click="pesquisar(month,year)" class="btn btn-primary">Atualizar dados</button>
+        <button ng-click="export(month,year)" class="btn btn-success">Exportar dados</button>
+    </div>
+    <br><br>
 
     <div id="exportable">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>nome</th>
-                <th>dataNasc</th>
-                <th>Sem Tecto</th>
-                <th>Sem casa</th>
-                <th>Grupo de risco</th>
-                <th>semana1</th>
-                <th>semana2</th>
-                <th>semana3</th>
-                <th>semana4</th>
-                <th>semana5</th>
-            </tr>
-            </thead>
-            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
-            <tr ng-repeat="rs in listResumo track by $index">
-                <td>{{rs.id}}</td>
-                <td>{{rs.name}}</td>
-                <td>{{rs.dtNasc}}</td>
-                <td>{{rs.st}}</td>
-                <td>{{rs.sc}}</td>
-                <td>{{rs.gr}}</td>
-                <td>{{rs.s1}}</td>
-                <td>{{rs.s2}}</td>
-                <td>{{rs.s3}}</td>
-                <td>{{rs.s4}}</td>
-                <td>{{rs.s5}}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th class="text-center">Sem Tecto</th>
+                    <th class="text-center">Sem Casa</th>
+                    <th class="text-center">Grupo de Risco</th>
+                    <th class="text-center">Semana 1</th>
+                    <th class="text-center">Semana 2</th>
+                    <th class="text-center">Semana 3</th>
+                    <th class="text-center">Semana 4</th>
+                    <th class="text-center">Semana 5</th>
+                </tr>
+                </thead>
+                <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="rs in listResumo track by $index">
+                    <td><a ui-sref="utenteDetail({rs.id})">{{rs.id}}</a></td>
+                    <td>{{rs.name}}</td>
+                    <td>{{rs.dtNasc}}</td>
+                    <td class="text-center">{{rs.st}}</td>
+                    <td class="text-center">{{rs.sc}}</td>
+                    <td class="text-center">{{rs.gr}}</td>
+                    <td class="text-center">{{rs.s1}}</td>
+                    <td class="text-center">{{rs.s2}}</td>
+                    <td class="text-center">{{rs.s3}}</td>
+                    <td class="text-center">{{rs.s4}}</td>
+                    <td class="text-center">{{rs.s5}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    <br>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="control-label">Idades</label>
+                    <label class="sr-only">menor que 20</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">menor que 20</div>
+                        <input type="number" class="form-control" placeholder="{{listIdades[0]}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="sr-only" >entre 20 e 29</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">entre 20 e 29</div>
+                        <input type="number" class="form-control"placeholder="{{listIdades[1]}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="sr-only" >entre 30 e 39</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">entre 30 e 39</div>
+                        <input type="number" class="form-control"placeholder="{{listIdades[2]}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="sr-only" >entre 40 e 49</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">entre 40 e 49</div>
+                        <input type="number" class="form-control"placeholder="{{listIdades[3]}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="sr-only" >maior que 50</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">maior que 50</div>
+                        <input type="number" class="form-control"placeholder="{{listIdades[4]}}" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nacionalidades</th>
+                    <th>Quantidade</th>
+                </tr>
+                </thead>
+                <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="nc in listNacionalidade track by $index">
+                    <td>{{nc.nacionalidade}}</td>
+                    <td>{{nc.quant}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-10 form-group has-success">
+                    <label class="control-label">Tipologias</label>
+                    <label class="sr-only">Sem Tecto</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Sem Tecto</div>
+                        <input type="number" class="form-control" placeholder="{{sTecto}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 form-group has-success">
+                    <label class="sr-only" >Sem Casa</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Sem Casa</div>
+                        <input type="number" class="form-control"placeholder="{{sCasa}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 form-group has-success">
+                    <label class="sr-only" >Grupo de Risco</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Grupo de Risco</div>
+                        <input type="number" class="form-control"placeholder="{{gRisco}}" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="control-label">Géneros</label>
+                    <label class="sr-only">Feminino</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Feminino</div>
+                        <input type="number" class="form-control" placeholder="{{sf}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-group has-success">
+                    <label class="sr-only" >Masculino</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Masculino</div>
+                        <input type="number" class="form-control"placeholder="{{sm}}" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-        <table>
-            <tr>
-                <td>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Idades</th>
-                            <th>Valor</th>
-                        </tr>
-                        </thead>
-                        <tr>
-                            <th>menor que 20</th>
-                            <th>{{listIdades[0]}}</th>
-                        </tr>
-                        <tr>
-                            <th>entre 20 e 29 </th>
-                            <th>{{listIdades[1]}}</th>
-                        </tr>
-                        <tr>
-                            <th>entre 30 e 39 </th>
-                            <th>{{listIdades[2]}}</th>
-                        </tr>
-                        <tr>
-                            <th>entre 40 e 49 </th>
-                            <th>{{listIdades[3]}}</th>
-                        </tr>
-                        <tr>
-                            <th> maior que 50</th>
-                            <th>{{listIdades[4]}}</th>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Nacionalidade</th>
-                            <th>Quantidade</th>
-                        </tr>
-                        </thead>
-                        <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
-                        <tr ng-repeat="nc in listNacionalidade track by $index">
-                            <td>{{nc.nacionalidade}}</td>
-                            <td>{{nc.quant}}</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sem Tecto
-                </td>
-                <td>{{sTecto}}</td>
-                <td>
-                    Sem Casa
-                </td>
-                <td>{{sCasa}}</td>
-                <td>
-                    Grupo de risco
-                </td>
-                <td>{{gRisco}}</td>
-            </tr>
-
-            <tr>
-                <td>
-                    sexo F
-                </td>
-                <td>{{sf}}</td>
-                <td>
-                    sexo M
-                </td>
-                <td>{{sm}}</td>
-
-            </tr>
-        </table>
 
 </div>
 
